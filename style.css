@@ -1,0 +1,13 @@
+.bgVaccine{
+    background-image: url('img/vaccination1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgVaccine h1{
+    font-size: 50%;
+    font-weight: 600;
+    color:burlywood;
+    vertical-align:middle;
+}
