@@ -6,3 +6,8 @@
     background-position: center;
     height: 70vh;
 }
+
+.vaccine h1{
+    font-size: 400%;
+    color: rgb(255, 243, 70);
+}
