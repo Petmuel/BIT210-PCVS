@@ -39,7 +39,7 @@ body{
 
 .decorate{
     background-image: url(img/bg-decorate.png);
-
+    background-attachment: fixed ;
     background-size:cover;
     background-repeat: no-repeat;
     
