@@ -8,7 +8,7 @@
     height: 50vh;
 }
 */
-body{
+#loginPage{
     background-color:rgb(255, 247, 238);
 }
 
@@ -48,6 +48,7 @@ body{
 
 .decorate{
     background-image: url(img/bg-decorate.png);
+    background-color:rgb(255, 247, 238);
     background-attachment: fixed ;
     background-size:cover;
     background-repeat: no-repeat;
@@ -81,6 +82,10 @@ body{
 *
 *
 */
+#RNVBPage{
+    background-color:aliceblue
+}
+
 .rnvbBg{
     background-color: cornsilk;
     background-image: url(img/recordNewVaccineBatchWallpaper.jpg);
