@@ -95,3 +95,7 @@
     max-width:100%;
     padding: 10%;
 }
+
+.horizontalOverflow{
+    overflow-x: auto;
+}
