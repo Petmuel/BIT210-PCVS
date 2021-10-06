@@ -99,3 +99,7 @@
 .horizontalOverflow{
     overflow-x: auto;
 }
+
+.transition{
+    transition: 0.5s;
+}

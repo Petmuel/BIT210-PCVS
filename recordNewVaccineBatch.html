@@ -53,17 +53,23 @@
       <!--to ensure that this tag to have responsive design to make nav bar function properly-->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <!--go to View Vaccine Batch Info Page-->
+          <!--scroll down to list of available vaccine (transition)-->
           <li class="nav-item">
-            <a href="#" class="nav-link" role="button">
+            <a href="#vaccineList" class="nav-link" role="button">
               View Vaccine Batch Information
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#footer" class="nav-link transition" role="button">
+              Contact Us
             </a>
           </li>
 
           <!--log out-->
           <li class="nav-item">
             <a href="login.html" class="nav-link" role="button">
-              Log out
+              Log Out
             </a>
           </li>
         </ul>
@@ -129,9 +135,9 @@
   </div>
 
   <!--list of available vaccines-->
-  <div class="py-5 px-3 text-center">
+  <div id="vaccineList" class="py-5 px-3 text-center">
     <!--shadow behind div with rounded corners-->
-    <div class="container decorate shadow-lg py-4 px-5 rounded-3">
+    <div class="container decorate shadow-lg py-3 px-4 rounded-3">
       <h3>List of Available Vaccines</h3>
       <div class="row horizontalOverflow">
         <table class="">
