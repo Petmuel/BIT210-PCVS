@@ -107,13 +107,9 @@
 * {box-sizing: border-box}
 
 
-body{
-    background-color:rgb(255, 255, 255) ;
-    /*background-image: linear-gradient(to bottom right,orange, cornsilk);*/
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-  }
 
-  input[type=text], input[type=password] {
+
+  #input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -122,18 +118,18 @@ body{
     background: #f1f1f1;
   }
   
-input[type=text]:focus, input[type=password]:focus {
+#input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-hr {
+#hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
   }
 
 /* Set a style for all buttons */
-button {
+#button {
   background-color: #368ff4;
   color: white;
   padding: 14px 20px;
@@ -144,8 +140,16 @@ button {
   opacity: 0.9;
 }
 
-button:hover {
+#button:hover {
   opacity:1;
+}
+
+
+#body {
+  background-image: url('img/bg-decorate.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
 }
 
 /* Extra styles for the cancel button */
