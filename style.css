@@ -83,7 +83,6 @@
 }
 
 .rnvbBg{
-    background-color: cornsilk;
     background-image: url(img/recordNewVaccineBatchWallpaper.jpg);
     background-attachment: fixed ;
     background-size: cover;
@@ -102,25 +101,20 @@
 *VIEW VACCINE BATCH INFORMATION PAGE
 */
 #VVBIPage{
-  background-color:rgb(184, 213, 252);
+  background-color: rgb(255, 250, 233);
 }
 .vvbiBg{
   background-color: cornsilk;
-    background-image: url(img/vaccination1.jpg);
-    background-attachment: fixed ;
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-width:100%;
-    padding: 10%;
+  background-image: url(img/vvbiWallpaper.jpg);
+  background-attachment: fixed ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width:100%;
+  padding: 10%;
 }
 
 .listvacBatchBg{
-  background-image: url(img/recordNewVaccineBatchWallpaper.jpg);
-  background-color:rgb(255, 247, 238);
-  background-attachment: fixed ;
-  background-size:cover;
-  background-repeat: no-repeat;
-  
+  background-color:rgb(255, 216, 108);
 }
 
  /**
