@@ -16,20 +16,17 @@
   <title>Administrator SignUp</title>
 
   <style>
-
     body {
       background-image: url('img/top-bg.png');
       background-repeat: no-repeat;
-      background-attachment: fixed; 
+      background-attachment: fixed;
       background-size: 100% 100%;
     }
 
-    label{
-        font-weight: bold;
+    label {
+      font-weight: bold;
     }
-
- 
-    </style>
+  </style>
 </head>
 
 <body id="RNVBPage">
@@ -47,57 +44,58 @@
         PCVS
       </a>
 
-<!--
+      <!--
           To toggle the navigation bar
           data-toggle: class that will be applying toggle to 
           data-target: target will be that ID created in div tag below
           add accessible tags: aria-controls, expanded, label
         -->
-        <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler">
-            <!--Add icon for the toggle button-->
-            <span class="navbar-toggler-icon"></span>
-  
-          </button>
-          <!--to ensure that this tag to have responsive design to make nav bar function properly-->
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-              <!--Create dropdown toggle-->
-              <li class="nav-item active dropdown">
-  
-                <!--To dropdown the items-->
-                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Sign Up
-                </a>
-  
-                <!--dropdown items-->
-                <ul class="dropdown-menu"aria-labelledby="navbarDropdown">
-                
-                  <li>
-                    <a href="adminSignUp" class="dropdown-item">
-                      Sign Up As Healthcare Administrator
-                    </a>
-                  </li>
-  
-                  <li>
-                    <a href="patientSignUp" class="dropdown-item">
-                      Sign Up As Patient
-                    </a>
-                  </li>
-  
-                </ul>
-  
-              </li>
-  
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  Login
+      <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler">
+        <!--Add icon for the toggle button-->
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+      <!--to ensure that this tag to have responsive design to make nav bar function properly-->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <!--Create dropdown toggle-->
+          <li class="nav-item active dropdown">
+
+            <!--To dropdown the items-->
+            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Sign Up
+            </a>
+
+            <!--dropdown items-->
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <li>
+                <a href="adminSignUp" class="dropdown-item">
+                  Sign Up As Healthcare Administrator
                 </a>
               </li>
+
+              <li>
+                <a href="patientSignUp" class="dropdown-item">
+                  Sign Up As Patient
+                </a>
+              </li>
+
             </ul>
-          </div>
-          
-          <!--Create search bar-->
-          <!--
+
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              Login
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--Create search bar-->
+      <!--
             form-control: create some of the stylings for the input
           
           <form action="#" class="d-flex">
@@ -107,101 +105,101 @@
             </button>
           </form>
         -->
-        </div>
-      </nav>
-    
-
-
-<br><br><br>
-<br>
+    </div>
+  </nav>
 
 
 
-    <form action="action_page.php" style="border:1px solid #ccc">
-        <div class="container">
-      
+  <br><br><br>
+  <br>
+
+
+
+  <form action="action_page.php" style="border:1px solid #ccc">
+    <div class="container">
+
       <h1>Adminstrator's Sign Up</h1>
-      <hr>  
+      <hr>
       <br><br>
 
-      
-      
-    <label for="healthcare">Healthcare Centers:</label>
-    <select name="healthcare" id="healthcare">
-            <option value="University Kebangsaan">University Kebangsaan</option>
-            <option value="IDCC Shah alam">IDCC Shah alam</option>
-            <option value="Bukit Jalil Stadium">Bukit Jalil Stadium</option>
-            <option value="KLCC 1 & 2">KLCC 1 & 2</option>
-        
-    </select>
 
-    <br><br><br>
-          
-        
-           
-        <div class="row">
-            <div class="col">
-                <label for="username" ><b>Username</b></label>
-                <input id="input" type="text" placeholder="Enter Username" name="username" required> 
-            </div>
-          
+
+      <label for="healthcare">Healthcare Centers:</label>
+      <select name="healthcare" id="healthcare">
+        <option value="University Kebangsaan">University Kebangsaan</option>
+        <option value="IDCC Shah alam">IDCC Shah alam</option>
+        <option value="Bukit Jalil Stadium">Bukit Jalil Stadium</option>
+        <option value="KLCC 1 & 2">KLCC 1 & 2</option>
+
+      </select>
+
+      <br><br><br>
+
+
+
+      <div class="row">
+        <div class="col">
+          <label for="username"><b>Username</b></label>
+          <input id="input" type="text" placeholder="Enter Username" name="username" required>
         </div>
 
-        <div class="row">
-            <div class="col">
-                <label for="psw"><b>Password</b></label>
-                <input id="input" type="password" placeholder="Enter Password" name="psw" required>
-            </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="psw"><b>Password</b></label>
+          <input id="input" type="password" placeholder="Enter Password" name="psw" required>
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="fullname"><b>Full name</b></label>
+          <input id="input" type="text" placeholder="Enter Fullname" name="Fullname" required>
+        </div>
+      </div>
+
 
         <div class="row">
-            <div class="col">
-                <label for="fullname" ><b>Full name</b></label>
-                <input id="input" type="text" placeholder="Enter Fullname" name="Fullname" required> 
-            </div>
-          
+          <div class="col">
+            <label for="email"><b>Email</b></label>
+            <input id="input" type="text" placeholder="Enter Email" name="email" required>
+          </div>
+        </div>
+
 
         <div class="row">
-            <div class="col">
-                <label for="email"><b>Email</b></label>
-                <input id="input" type="text" placeholder="Enter Email" name="email" required> 
-            </div>
+          <div class="col">
+            <label for="staffID"><b>Staff ID</b></label>
+            <input id="input" type="text" placeholder="Enter your staff ID" name="staffID" required>
+          </div>
         </div>
-          
+
 
         <div class="row">
-            <div class="col">
-                <label for="staffID"><b>Staff ID</b></label>
-                <input id="input" type="text" placeholder="Enter your staff ID" name="staffID" required>
-            </div>
-        </div>
-          
-      
-        <div class="row">
-            <div class="col">
-                <input id="input" type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>
-            </div>
-        </div>
-          <label>
-            
-      
-          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-      
-          <div class="clearfix">
-            <button   type="submit" class="signupbtn">Sign Up</button>
-            <button   type="button" class="cancelbtn">Cancel</button>
-            
+          <div class="col">
+            <input id="input" type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
             
           </div>
         </div>
-      </form>
+
+
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="button" class="cancelbtn">Cancel</button>
+
+
+        </div>
+    </div>
+  </form>
 
 
 
 
- <!-- ======= Footer ======= -->
- <footer id="footer" class="section-bg">
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="section-bg">
     <div class="footer-top">
       <div class="container">
         <div class="row text-center">
@@ -274,4 +272,5 @@
     crossorigin="anonymous"></script>
 
 </body>
+
 </html>
