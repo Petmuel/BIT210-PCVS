@@ -28,6 +28,7 @@
         font-weight: bold;
     }
 
+ 
     </style>
 </head>
 
@@ -118,12 +119,15 @@
 
     <form action="action_page.php" style="border:1px solid #ccc">
         <div class="container">
-
-          <br>
       
       <h1>Sign Up</h1>
       <hr>  
+      <br>
+
       
+      
+    
+
     <br><br>
           
         
@@ -131,7 +135,7 @@
         <div class="row">
             <div class="col">
                 <label for="username" ><b>Username</b></label>
-                <input id="input" type="text" placeholder="Enter Username" name="username" required> 
+                <input id="input" type="text" placeholder="Enter your Username" name="username" required> 
             </div>
           
         </div>
@@ -139,14 +143,21 @@
         <div class="row">
             <div class="col">
                 <label for="psw"><b>Password</b></label>
-                <input id="input" type="password" placeholder="Enter Password" name="psw" required>
+                <input id="input" type="password" placeholder="Enter your Password" name="psw" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
+                <label for="fullname" ><b>Full name</b></label>
+                <input id="input" type="text" placeholder="Enter your Full Name" name="Fullname" required> 
+            </div>
+          
+
+        <div class="row">
+            <div class="col">
                 <label for="email"><b>Email</b></label>
-                <input id="input" type="text" placeholder="Enter Email" name="email" required> 
+                <input id="input" type="text" placeholder="Enter your Email" name="email" required> 
             </div>
         </div>
           
@@ -182,54 +193,56 @@
 
 
 
-<!-- ======= Footer ======= -->
-<footer id="footer" class="section-bg">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-sm-6">
+ <!-- ======= Footer ======= -->
+ <footer id="footer" class="section-bg">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-sm-6">
 
-          <div class="footer-info">
-            <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
-            <h3>PCVS</h3>
-            <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
-              Vaccination System will help allowing the health ministry to keep
-              track of vaccinations that have been administered by healthcare administrators in different healthcare
-              centres.ç
-            </p>
+            <div class="footer-info">
+              <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+              <h3>PCVS</h3>
+              <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
+                Vaccination System will help allowing the health ministry to keep
+                track of vaccinations that have been administered by healthcare administrators in different healthcare
+                centres.ç
+              </p>
+            </div>
+
+            <div class="footer-newsletter">
+              <h4>Covid-19</h4>
+              <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+                Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and
+                recover without requiring special treatment.
+              </p>
+            </div>
+
           </div>
 
-          <div class="footer-newsletter">
-            <h4>Covid-19</h4>
-            <p>Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
-              Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and
-              recover without requiring special treatment.
+          <div class="col-sm-6">
+            <br><br>
+            <h4>Pages</h4>
+            <ul class="list-unstyled">
+              <li><a href="#">View List of Vaccines</a></li>
+              <li><a href="#">Sign Up</a></li>
+              <li><a href="#">Login as administrator</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+
+            <br>
+
+            <h4>Contact Us</h4>
+            <p>
+              <strong>Address : </strong>No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan<br>
+              Bukit Damansara, 50490<br>
+              Kuala Lumpur<br>
+              <strong>Phone : </strong>012-123-4567<br>
+              <strong>Email : </strong>PCVS@gmail.com<br>
             </p>
+
+
           </div>
-
-        </div>
-
-        <div class="col-sm-6">
-          <br><br>
-          <h4>Pages</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">View List of Vaccines</a></li>
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login as administrator</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-
-          <br>
-
-          <h4>Contact Us</h4>
-          <p>
-            <strong>Address : </strong>No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan<br>
-            Bukit Damansara, 50490<br>
-            Kuala Lumpur<br>
-            <strong>Phone : </strong>012-123-4567<br>
-            <strong>Email : </strong>PCVS@gmail.com<br>
-          </p>
-
 
         </div>
 
@@ -237,23 +250,21 @@
 
     </div>
 
-  </div>
-
-  </div>
-  </div>
-
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong>CTIS</strong>. All Rights Reserved
     </div>
-  </div>
-</footer><!-- End  Footer -->
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>CTIS</strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
 
 </body>
 </html>
