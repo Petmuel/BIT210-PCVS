@@ -22,13 +22,7 @@
 
 
 /**
-*
-*
-*
-*LANDING PAGE
-*
-*
-*
+*LOGIN PAGE
 */
 .introTitle h1{
     text-align: center;
@@ -81,14 +75,8 @@
     font-size: 15px;
   }
 
-  /**
-*
-*
-*
+/**
 *RECORD VACCINE BATCH PAGE (ADMIN HOMEPAGE)
-*
-*
-*
 */
 #RNVBPage{
     background-color:aliceblue
@@ -103,15 +91,37 @@
     max-width:100%;
     padding: 10%;
 }
-
 .horizontalOverflow{
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 .transition{
-    transition: 0.5s;
+  transition: 0.5s;
+}
+/**
+*VIEW VACCINE BATCH INFORMATION PAGE
+*/
+#VVBIPage{
+  background-color:rgb(184, 213, 252);
+}
+.vvbiBg{
+  background-color: cornsilk;
+    background-image: url(img/vaccination1.jpg);
+    background-attachment: fixed ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width:100%;
+    padding: 10%;
 }
 
+.listvacBatchBg{
+  background-image: url(img/recordNewVaccineBatchWallpaper.jpg);
+  background-color:rgb(255, 247, 238);
+  background-attachment: fixed ;
+  background-size:cover;
+  background-repeat: no-repeat;
+  
+}
 
  /**
 *

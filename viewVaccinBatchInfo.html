@@ -16,7 +16,7 @@
   <title>View Vaccine Batch Information</title>
 </head>
 
-<body id="RNVBPage">
+<body id="VVBIPage">
   <!--
       Navigation bar
       navbar-expand-sm is to see all the nav-items before the nav bar collapses
@@ -89,24 +89,18 @@
     </div>
   </nav>
 
-  <div class="container rnvbBg mt-5">
+  <div class="container vvbiBg mt-5">
     <div class="row">
-      <div class="col-md-6 text-light fw-light fs-6">
+      <div class="col-md-12 text-light fw-light fs-6">
         <div class="d-flex justify-content-center align-items-center">
-          <div class="introTitle justify-content-center align-items-center">
+          <div class="introTitle text-center">
             <h1 class="text-warning">View All Vaccine Batches</h1>
-            <h6>You can able to view details of every vaccine batches that you have recorded</h6>
-            <p>Other than that, you can able to check its vaccinations just by clicking the "View Vaccinations" button next to it. From there, 
-                there will be vaccination appointments requested by patients which are pending for you to confirm/reject. 
-                If the vaccination has been administered, you can confirm it as well</p>
-
+            <h4>You can able to view details of every vaccine batches that you have recorded</h4>
+            <p>Other than that, you can able to check its vaccinations just by clicking the "View Vaccinations" button next to it. </p>
+            <p>From there, there will be vaccination appointments requested by patients which are pending for you to confirm/reject. </p>
+            <p>If the vaccination has been administered, you can confirm it as well</p>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-6">
-        <!--.img-fluid: make image responsive (max-width: 100%, height: auto)-->
-        <img src="img/vaccine.png" alt="patientClipArt" class="img-fluid">
       </div>
     </div>
   </div>
@@ -114,7 +108,7 @@
   <!--list of available vaccines-->
   <div id="vaccineList" class="py-5 px-3 text-center">
     <!--shadow behind div with rounded corners-->
-    <div class="container decorate shadow-lg py-3 px-4 rounded-3">
+    <div class="container listvacBatchBg shadow-lg py-3 px-4 rounded-3">
       <h3>List of Recorded Vaccine Batches</h3>
       <div class="row horizontalOverflow">
         <table class="">
@@ -122,7 +116,7 @@
             <th class="p-3">Select</th>
             <th class="p-3">BatchNo</th>
             <th class="p-3">VaccineName</th>
-            <th class="p-3">No. of Pending Appointments</th>
+            <th class="p-3">Pending Appointments</th>
           </tr>
 
           <tr>
@@ -163,50 +157,6 @@
       </div>
     </div>
   </div>
-
-  <!--Alternate list of available vaccines
-  <div class="container shadow-lg decorate">
-    <div class="row">
-      <div class="col">
-        vaccineId01
-        <ul class="list-group list-group-horizontal-xl justify-content-center ">
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineName01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">Manufacturer01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent"><a href="#">View</a></li>
-        </ul>
-        
-        <ul class="list-group list-group-horizontal-xl justify-content-center">
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineID01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineName01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">Manufacturer01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent"><a href="#">View</a></li>
-        </ul>
-        
-        <ul class="list-group list-group-horizontal-xl justify-content-center">
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineID01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineName01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">Manufacturer01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent"><a href="#">View</a></li>
-        </ul>
-        
-        <ul class="list-group list-group-horizontal-xl justify-content-center">
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineID01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineName01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">Manufacturer01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent"><a href="#">View</a></li>
-        </ul>
-        
-        <ul class="list-group list-group-horizontal-xl justify-content-center">
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineID01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">VaccineName01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent">Manufacturer01</li>
-          <li class="list-group-item border-0 px-5 bg-transparent"><a href="#">View</a></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
--->
 
 
  <!-- ======= Footer ======= -->
