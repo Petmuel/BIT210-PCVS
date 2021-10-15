@@ -11,6 +11,8 @@
     <!-- Stylesheet CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Javascript -->
+    <script type="module" src="assets/testingOnly.js"></script>
     <title>CPS-Vaccine</title>
   </head>
   <body id="loginPage">
@@ -76,18 +78,6 @@
             </li>
           </ul>
         </div>
-        
-        <!--Create search bar-->
-        <!--
-          form-control: create some of the stylings for the input
-        
-        <form action="#" class="d-flex">
-          <input type="text" class="form-control me-2" name="search">
-          <button type="submit" class="btn btn-outline-success">
-            Search
-          </button>
-        </form>
-      -->
       </div>
     </nav>
     
@@ -113,96 +103,94 @@
       </div>
     </div>
     
-  <div class="decorate">
-    <div class="container pt-5">
-      <div class="row p-2">
-        <div class="col-md-6 text-center pb-4">
-          <p class="fs-1 fst-italic">We care for your health!</p>
-          <img src="img/doctors.png" alt="doctors" class="img-fluid">
-        </div>
-     
-        <div class="col-md-6 formBg p-5">
-          <form>
-            <h3>Login</h3>
-            <p class="text-black-50">Please fill in details</p>
-            <div class="mb-3">
-              <label for="inputUsername" class="form-label">Username</label>
-              <input type="text" class="form-control" id="inputUsername">
-            </div>
-            <div class="mb-3">
-              <label for="inputPassword" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword">
-            </div>
-  
-            <!-- sign up links-->
-            <div class="mb-3">
-              <ul class="list-unstyled">
-                Don't have any account? Sign up here as <a href="#">Administrator</a>
-                <a href="#">Patient</a>
-              </ul>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Login</button>
-            
-          </form>
+    <div class="decorate">
+      <div class="container pt-5">
+        <div class="row p-2">
+          <div class="col-md-6 text-center pb-4">
+            <p class="fs-1 fst-italic">We care for your health!</p>
+            <img src="img/doctors.png" alt="doctors" class="img-fluid">
+          </div>
+      
+          <div class="col-md-6 formBg p-5">
+            <form action="/" method="POST">
+              <h3>Login</h3>
+              <p class="text-black-50">Please fill in details</p>
+              <div class="mb-3">
+                <label for="inUsername" class="form-label">Username</label>
+                <input type="text" class="form-control" id="inUsername" required>
+              </div>
+              <div class="mb-3">
+                <label for="inPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inPassword">
+              </div>
+    
+              <!-- sign up links-->
+              <div class="mb-3">
+                <ul class="list-unstyled">
+                  Don't have any account? Sign up here as <a href="adminSignup.html">Administrator</a>
+                  <a href="signup.html">Patient</a>
+                </ul>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Login</button>
+              
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
- <!-- ======= Footer ======= -->
- <footer id="footer" class="section-bg">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-sm-6">
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="section-bg">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-sm-6">
 
-          <div class="footer-info">
-            <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
-            <h3>PCVS</h3>
-            <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
-              Vaccination System will help allowing the health ministry to keep
-              track of vaccinations that have been administered by healthcare administrators in different healthcare
-              centres.
-            </p>
+              <div class="footer-info">
+                <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+                <h3>PCVS</h3>
+                <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
+                  Vaccination System will help allowing the health ministry to keep
+                  track of vaccinations that have been administered by healthcare administrators in different healthcare
+                  centres.
+                </p>
+              </div>
+
+
+            </div>
+
+            <div class="col-sm-6">
+
+
+              <h4>Contact Us</h4>
+              <p>
+                <strong>Address : </strong>No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan<br>
+                Bukit Damansara, 50490<br>
+                Kuala Lumpur<br>
+                <strong>Phone : </strong>012-123-4567<br>
+                <strong>Email : </strong>PCVS@gmail.com<br>
+              </p>
+
+
+            </div>
+
           </div>
 
-
-        </div>
-
-        <div class="col-sm-6">
-
-
-          <h4>Contact Us</h4>
-          <p>
-            <strong>Address : </strong>No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan<br>
-            Bukit Damansara, 50490<br>
-            Kuala Lumpur<br>
-            <strong>Phone : </strong>012-123-4567<br>
-            <strong>Email : </strong>PCVS@gmail.com<br>
-          </p>
-
-
         </div>
 
       </div>
 
-    </div>
+      </div>
+      </div>
 
-  </div>
-
-  </div>
-  </div>
-
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong>CTIS</strong>. All Rights Reserved
-    </div>
-  </div>
-</footer><!-- End  Footer -->
-
-  
- 
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong>CTIS</strong>. All Rights Reserved
+        </div>
+      </div>
+    </footer><!-- End  Footer -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   </body>
 </html>
