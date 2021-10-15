@@ -17,7 +17,7 @@ function signUp(event){
 
     //store new patient object into patients array
     PCVS.patients.push(newPatientObj);
-    //console.log(PCVS.patients);
+    console.log(PCVS.patients);
     
-    window.location.href = "login.html";
+    //window.location.href = "login.html";
 }
