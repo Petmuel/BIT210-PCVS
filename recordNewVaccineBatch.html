@@ -134,58 +134,110 @@
     </div>
   </div>
 
-  <!--list of available vaccines-->
-  <div class="py-5 px-3 text-center">
-    <!--shadow behind div with rounded corners-->
-    <div class="container decorate shadow-lg py-3 px-4 rounded-3">
-      <h3>List of Available Vaccines</h3>
-      <div class="row horizontalOverflow">
-        <table class="shadow-lg">
-          <tr class="bg-white shadow-sm">
-            <th class="p-3">Select</th>
-            <th class="p-3">VaccineID</th>
-            <th class="p-3">VaccineName</th>
-            <th class="p-3">Manufacturer</th>
-          </tr>
+  <!--Record new vaccine batch-->
+  <form method="get">
+    <div class="py-5 px-3 text-center">
+      <!--list of available vaccines-->
+      <div class="container decorate shadow-lg py-3 px-4 rounded-3">
+        <h3>List of Available Vaccines</h3>
+        <h5>Select a Vaccine to Record New Batch</h5>
+        <div class="row horizontalOverflow">
+          <table class="shadow-lg bg-white">
+            <tr class="shadow-sm">
+              <th class="p-3">VaccineID</th>
+              <th class="p-3">VaccineName</th>
+              <th class="p-3">Manufacturer</th>
+            </tr>
 
-          <tr>
-            <td><a href="#">View</a></td>
-            <td class="p-3">Vaccine01</td>
-            <td class="p-3">VaccineName01</td>
-            <td class="p-3">Manufacturer01</td>
-          </tr>
+            <tr class="shadow-sm">
+              <td class="px-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad1">
+                  <label class="form-check-label" for="rad1">
+                   Vaccine01
+                  </label>
+                </div>
+              </td>
+              <td class="p-3">VaccineName01</td>
+              <td class="p-3">Manufacturer01</td>
+            </tr>
 
-          <tr class="bg-white shadow-sm">
-            <td><a href="#">View</a></td>
-            <td class="p-3">Vaccine02</td>
-            <td class="p-3">VaccineName02</td>
-            <td class="p-3">Manufacturer02</td>
-          </tr>
+            <tr class="shadow-sm">
+              <td class="px-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad2">
+                  <label class="form-check-label" for="rad2">
+                   Vaccine02
+                  </label>
+                </div>
+              </td>
+              <td class="p-3">VaccineName02</td>
+              <td class="p-3">Manufacturer02</td>
+            </tr>
 
-          <tr>
-            <td><a href="#">View</a></td>
-            <td class="p-3">Vaccine03</td>
-            <td class="p-3">VaccineName03</td>
-            <td class="p-3">Manufacturer03</td>
-          </tr>
+            <tr class="shadow-sm">
+              <td class="px-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad3">
+                  <label class="form-check-label" for="rad3">
+                   Vaccine03
+                  </label>
+                </div>
+              </td>
+              <td class="p-3">VaccineName03</td>
+              <td class="p-3">Manufacturer03</td>
+            </tr>
 
-          <tr class="bg-white shadow-sm">
-            <td><a href="#">View</a></td>
-            <td class="p-3">Vaccine04</td>
-            <td class="p-3">VaccineName04</td>
-            <td class="p-3">Manufacturer04</td>
-          </tr>
+            <tr class="shadow-sm">
+              <td class="px-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad4">
+                  <label class="form-check-label" for="rad4">
+                   Vaccine04
+                  </label>
+                </div>
+              </td>
+              <td class="p-3">VaccineName04</td>
+              <td class="p-3">Manufacturer04</td>
+            </tr>
 
-          <tr>
-            <td><a href="#">View</a></td>
-            <td class="p-3">Vaccine05</td>
-            <td class="p-3">VaccineName05</td>
-            <td class="p-3">Manufacturer05</td>
-          </tr>
-        </table>
+            <tr class="shadow-sm">
+              <td class="px-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="rad5">
+                  <label class="form-check-label" for="rad5">
+                   Vaccine05
+                  </label>
+                </div>
+              </td>
+              <td class="p-3">VaccineName05</td>
+              <td class="p-3">Manufacturer05</td>
+            </tr>
+          </table>
+        </div>
+      
+        <h4>Record new vaccine batch</h3>
+        <div class="row">
+          <div class="col-lg-4 py-2">
+            <label for="batchNo">Batch Number</label>
+            <input type="text" id="batchNo" name="batchNo">
+          </div> 
+
+          <div class="col-lg-4 py-2">
+            <label for="exDate">Expiry Date</label>
+              <input type="date" id="exDate" name="exDate">
+          </div> 
+
+          <div class="col-lg-4">
+            <label for="quantityAv">Quantity of dose available</label>
+            <input type="text" id="quantityAv" name="quantityAv">
+          </div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary">Record</button>
       </div>
     </div>
-  </div>
+  </form>
 
  <!-- ======= Footer ======= -->
  <footer id="footer" class="section-bg">
