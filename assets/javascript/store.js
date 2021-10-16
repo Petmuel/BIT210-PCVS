@@ -11,13 +11,14 @@ var jsObject = {
 var patientObj = {
     username: "Samuel",
     password: "patient123",
+    fullName: "Han Vui Ern Samuel",
     email: "sam@gmail.com",
     icPassport: "123456-12-1234"
 }
 
 //hard-coded healthcareCentre
 var healthcareCentre1 = {
-    centreName: "Puchong HealthcareCentre",
+    centreName: "PuchongHealth Centre",
     centreAddress: "Puchong, Malaysia",
     batch: []
 }
@@ -25,9 +26,9 @@ var healthcareCentre1 = {
 //hard-coded admin
 var adminObj = {
     centre: healthcareCentre1,
-    username: "Sam",
-    password: "patient123",
-    email: "sam@gmail.com",
+    username: "Han",
+    password: "admin123",
+    email: "hanAdmin@gmail.com",
     staffID:"admin01"
 }
 

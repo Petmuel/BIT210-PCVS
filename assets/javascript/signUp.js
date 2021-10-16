@@ -19,5 +19,6 @@ function signUp(event){
     PCVS.patients.push(newPatientObj);
     console.log(PCVS.patients);
     
-    //window.location.href = "login.html";
+    window.location.href = "login.html";
 }
+

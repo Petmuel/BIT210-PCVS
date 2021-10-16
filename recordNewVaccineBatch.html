@@ -13,6 +13,8 @@
   <!-- Stylesheet CSS -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Javascript testing.js-->
+  <script src="assets/javascript/nameOrHcName.js"></script>
   <title>Record New Vaccine Batch</title>
 </head>
 
@@ -31,13 +33,8 @@
         PCVS
       </a>
 
-      <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-      <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-      <!--////////////////////////////////////////////Need to call out the administrator full name (php)////////////////////////////////////////////-->
-      <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-      <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-      Welcome, administrator
-
+      <!--admin's healthcare centre name is shown (hard-coded in nameOrHcName.js)-->
+      <div id="callCentreName"></div>
 
       <!--
           To toggle the navigation bar
@@ -135,7 +132,7 @@
   </div>
 
   <!--Record new vaccine batch-->
-  <form method="get">
+  <form id="rvbi">
     <div class="py-5 px-3 text-center">
       <!--list of available vaccines-->
       <div class="container decorate shadow-lg py-3 px-4 rounded-3">
@@ -239,38 +236,40 @@
     </div>
   </form>
 
- <!-- ======= Footer ======= -->
- <footer id="footer" class="section-bg">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-sm-6">
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="section-bg">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-sm-6">
 
-          <div class="footer-info">
-            <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
-            <h3>PCVS</h3>
-            <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
-              Vaccination System will help allowing the health ministry to keep
-              track of vaccinations that have been administered by healthcare administrators in different healthcare
-              centres.
-            </p>
+            <div class="footer-info">
+              <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+              <h3>PCVS</h3>
+              <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
+                Vaccination System will help allowing the health ministry to keep
+                track of vaccinations that have been administered by healthcare administrators in different healthcare
+                centres.
+              </p>
+            </div>
+
+
           </div>
 
-
-        </div>
-
-        <div class="col-sm-6">
+          <div class="col-sm-6">
 
 
-          <h4>Contact Us</h4>
-          <p>
-            <strong>Address : </strong>No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan<br>
-            Bukit Damansara, 50490<br>
-            Kuala Lumpur<br>
-            <strong>Phone : </strong>012-123-4567<br>
-            <strong>Email : </strong>PCVS@gmail.com<br>
-          </p>
+            <h4>Contact Us</h4>
+            <p>
+              <strong>Address : </strong>No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan<br>
+              Bukit Damansara, 50490<br>
+              Kuala Lumpur<br>
+              <strong>Phone : </strong>012-123-4567<br>
+              <strong>Email : </strong>PCVS@gmail.com<br>
+            </p>
 
+
+          </div>
 
         </div>
 
@@ -278,23 +277,27 @@
 
     </div>
 
-  </div>
-
-  </div>
-  </div>
-
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong>CTIS</strong>. All Rights Reserved
     </div>
-  </div>
-</footer><!-- End  Footer -->
+    </div>
 
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>CTIS</strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
 
+  <script type="text/javascript">
+    //calling out string variable (centre) from nameOrHcName.js
+    document.getElementById('callCentreName').innerHTML = centre;
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
+
+
+  
 </body>
 
 </html>
