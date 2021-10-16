@@ -13,16 +13,34 @@ var patientObj = {
     icPassport: "123456-12-1234"
 }
 
-//hard-coded healthcareCentre
-var healthcareCentre1 = {
-    centreName: "PuchongHealth Centre",
+//hard-coded healthcareCentre to show them in use case 1, 2, 3 and 4
+var centre1 = {
+    centreName: "University Kebangsaan",
+    centreAddress: "Puchong, Malaysia",
+    batch: []
+}
+
+var centre2 = {
+    centreName: "IDCC Shah alam",
+    centreAddress: "Puchong, Malaysia",
+    batch: []
+}
+
+var centre3 = {
+    centreName: "Bukit Jalil Stadium",
+    centreAddress: "Puchong, Malaysia",
+    batch: []
+}
+
+var centre4 = {
+    centreName: "KLCC 1 & 2",
     centreAddress: "Puchong, Malaysia",
     batch: []
 }
 
 //hard-coded admin
 var adminObj = {
-    centre: healthcareCentre1,
+    healthcareCentre: centre1,
     username: "Han",
     password: "admin123",
     email: "hanAdmin@gmail.com",
@@ -50,11 +68,11 @@ var vaccine3 = {
 
 patients.push(patientObj);
 admins.push(adminObj);
-healthcareCentres.push(healthcareCentre1);
+healthcareCentres.push(centre1, centre2, centre3, centre4);
 vaccines.push(vaccine1, vaccine2, vaccine3);
 
 //patient Sign Up
-function signUp(){
+function patientSignUp(){
     var newPatientObj = new Object();
     newPatientObj.username = document.getElementById('username').value;
     newPatientObj.password = document.getElementById('psw').value;
@@ -69,12 +87,30 @@ function signUp(){
         window.location.replace("login.html");
     }
     else{
-        alert("Please fill up the sign up form")
+        alert("Please fill up the sign up form");
     }
 }
 
 //admin Sign Up
+function adminSignUp(){
+    var newAdminObj = new Object();
+    newAdminObj.healthcareCentre = document.getElementById('healthcare').value;
+    newAdminObj.username = document.getElementById('aUsername').value;
+    newAdminObj.password = document.getElementById('aPsw').value;
+    newAdminObj.fullname = document.getElementById('aFName').value;
+    newAdminObj.email = document.getElementById('aEmail').value;
+    newAdminObj.staffID = document.getElementById('inStaffID').value;
 
+    if(newAdminObj.centre!="" && newAdminObj.username !="" && newAdminObj.password !="" && newAdminObj.fullname!="" &&newAdminObj .email!="" && newAdminObj.staffID != ""){
+        //store new patient object into patients array
+        admins.push(newAdminObj);
+        alert("Your account has been saved");
+        window.location.replace("login.html");
+    }
+    else{
+        alert("Please fill up the sign up form")
+    }
+}
 
 //Users login
 function login(){
@@ -99,7 +135,7 @@ function login(){
         else{
             for(var i=0; i<= admins.length; i++){
                 if(admins[i].username == inUsername && admins[i].password == inPassword){
-                    alert("Welcome, " + admins[i].username + " (HealthcareCentre name: " + admins[i].centre.centreName + ")");
+                    alert("Welcome, " + admins[i].username + " (HealthcareCentre name: " + admins[i].healthcareCentre.centreName + ")");
                     window.location.replace("recordNewVaccineBatch.html");
                 }
                 else{
