@@ -61,13 +61,13 @@
               <ul class="dropdown-menu"aria-labelledby="navbarDropdown">
               
                 <li>
-                  <a href="adminSignUp" class="dropdown-item">
+                  <a href="adminSignup.html" class="dropdown-item">
                     Administrator
                   </a>
                 </li>
 
                 <li>
-                  <a href="patientSignUp" class="dropdown-item">
+                  <a href="signup.html" class="dropdown-item">
                     Patient
                   </a>
                 </li>
@@ -110,16 +110,16 @@
           </div>
       
           <div class="col-md-6 formBg p-5">
-            <form method="POST" id="login">
+            <form>
               <h3>Login</h3>
               <p class="text-black-50">Please fill in details</p>
               <div class="mb-3">
                 <label for="inUsername" class="form-label">Username</label>
-                <input type="text" class="form-control" id="inUsername" required>
+                <input type="text" class="form-control" name="inUsername" id="inUsername">
               </div>
               <div class="mb-3">
                 <label for="inPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inPassword">
+                <input type="password" class="form-control" name="inPassword" id="inPassword">
               </div>
     
               <!-- sign up links-->
@@ -130,9 +130,7 @@
                 </ul>
               </div>
               
-              
-              <button type="submit" id="loginBtn" class="btn btn-primary">Login</button>
-              
+              <input type="button" class="btn btn-primary" value="Login" onclick="login()">
             </form>
           </div>
         </div>
@@ -189,13 +187,14 @@
         </div>
       </div>
     </footer><!-- End  Footer -->
-
-     <!-- Javascript-->
-     <!--patientFullname or adminHealthcareCentreName to be stored and retrieved-->
-     <script type="module" src="assets/javascript/nameOrHcName.js"></script>
-     <!--validate user input for logging in-->
-     <script type="module" src="assets/javascript/login.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    
+    <!--javascript-->
+    <script src="assets/javascript/main.js"></script>
+
+    <!--testing only (need to remove later)-->
+    <script>
+      console.log(patients);
+    </script>
   </body>
 </html>

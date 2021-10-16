@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="style.css">
 
   <!-- Javascript testing.js-->
-  <script src="assets/javascript/nameOrHcName.js"></script>
+  <script src="assets/javascript/main.js"></script>
+
   <title>Record New Vaccine Batch</title>
 </head>
 
@@ -32,10 +33,6 @@
         <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
         PCVS
       </a>
-
-      <!--admin's healthcare centre name is shown (hard-coded in nameOrHcName.js)-->
-      <div id="callCentreName"></div>
-
       <!--
           To toggle the navigation bar
           data-toggle: class that will be applying toggle to 
@@ -91,33 +88,11 @@
       <div class="col-md-6 text-light fw-light fs-6">
         <div class="d-flex justify-content-center align-items-center">
           <div class="introTitle justify-content-center align-items-center">
-            <h1 class="text-warning">Vaccines In Malaysia</h1>
-            <h6>Pfizer-BioNTech vaccine</h6>
-            On August 23, 2021, the FDA approved the first COVID-19 vaccine. The vaccine has been known as the
-            Pfizer-BioNTech COVID-19 Vaccine,
-            and will now be marketed as Comirnaty, for the prevention of COVID-19 disease in individuals 16 years of age
-            and older.
-            <h6>Oxford–AstraZeneca vaccine</h6>
+            <!--admin's healthcare centre name is shown -->
+            <h1 class="text-warning" id="callCentreName"></h1>
 
-            On 30 December 2020, the vaccine was first approved for use in the UK vaccination programme,
-            and the first vaccination outside of a trial was administered on 4 January 2021.
-            The vaccine has since been approved by several medicine agencies worldwide, such as the European Medicines
-            Agency (EMA),
-            Australian Therapeutic Goods Administration (provisional approval in February 2021), and World Health
-            Organization (WHO).
-            By July 2021, one billion doses of the vaccine had been released to more than 170 countries worldwide.
-
-            <p>
-            <h6>Sinovac</h6>
-
-            CoronaVac, also known as the Sinovac COVID-19 vaccine is being used in vaccination campaigns in various
-            countries in Asia, South America, Central America, and Eastern Europe.
-            By April 2021, Sinovac had a production capacity of 2 billion doses a year.
-            It is currently being manufactured at several facilities in China, with planned overseas manufacture in
-            Brazil in September 2021 and eventually in Egypt and Hungary.
-            As of July 2021, CoronaVac was the most widely used COVID-19 vaccine in the world, with 943 million doses
-            delivered.
-            </p>
+            <h4>Record New Vaccine Batch</h4>
+            <p>A list of available vaccines is shown below for you to select and record a new vaccine batch.</p>
 
 
           </div>
@@ -227,7 +202,7 @@
 
           <div class="col-lg-4">
             <label for="quantityAv">Quantity of dose available</label>
-            <input type="number" id="quantityAv" name="quantityAv" min="1" max="5" required>
+            <input type="number" id="quantityAv" name="quantityAv" min="1" max="10000" required>
           </div>
         </div>
         <br>
@@ -288,8 +263,9 @@
   </footer><!-- End  Footer -->
 
   <script type="text/javascript">
-    //calling out string variable (centre) from nameOrHcName.js
-    document.getElementById('callCentreName').innerHTML = centre;
+    //calling out centre name from adminObj from main.js
+    //show healthcare centre name after admin logs in
+    document.getElementById('callCentreName').innerHTML = "Healthcare Centre: " + adminObj.centre.centreName; 
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

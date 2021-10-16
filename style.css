@@ -1,20 +1,11 @@
-/**
-.vaccineBg {
-    background-image: url(img/patient.jpg);
-    background-attachment: fixed ; fixed position
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-}
-*/
  /**
-*
-*
-*
+**************************
+**************************
+**************************
 *Han Vui Ern Samuel's css
-*
-*
+**************************
+**************************
+**************************
 */
 #loginPage{
     background-color:rgb(255, 247, 238);
@@ -118,19 +109,20 @@
 }
 
  /**
-*
-*
-*
+**************************
+**************************
+**************************
 *Parnia Sakhaei's css
-*
-*
+**************************
+**************************
+**************************
 */
 * {box-sizing: border-box}
 
 
 
 
-  .input[type=text], .input[type=email], .input[type=password] {
+  .input[type=text], .input[type=email], .input[type=number], .input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -139,7 +131,7 @@
     background: #f1f1f1;
   }
   
-.input[type=text]:focus, .input[type=email]:focus, .input[type=password]:focus {
+.input[type=text]:focus, .input[type=email]:focus, .input[type=number], .input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -180,12 +172,12 @@
 .container1 {
     padding: 16px;
   } 
-/* Clear floats */
+/* Clear floats 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
-}
+}*/
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
