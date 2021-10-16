@@ -1,20 +1,11 @@
-/**
-.vaccineBg {
-    background-image: url(img/patient.jpg);
-    background-attachment: fixed ; fixed position
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-}
-*/
  /**
-*
-*
-*
+**************************
+**************************
+**************************
 *Han Vui Ern Samuel's css
-*
-*
+**************************
+**************************
+**************************
 */
 #loginPage{
     background-color:rgb(255, 247, 238);
@@ -118,12 +109,13 @@
 }
 
  /**
-*
-*
-*
+**************************
+**************************
+**************************
 *Parnia Sakhaei's css
-*
-*
+**************************
+**************************
+**************************
 */
 * {box-sizing: border-box}
 
