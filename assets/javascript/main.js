@@ -17,29 +17,30 @@ var patientObj = {
 var centre1 = {
     centreName: "University Kebangsaan",
     centreAddress: "Puchong, Malaysia",
-    batch: []
+    vaccineBatches: []
 }
 
 var centre2 = {
     centreName: "IDCC Shah alam",
     centreAddress: "Puchong, Malaysia",
-    batch: []
+    vaccineBatches: []
 }
 
 var centre3 = {
     centreName: "Bukit Jalil Stadium",
     centreAddress: "Puchong, Malaysia",
-    batch: []
+    vaccineBatches: []
 }
 
 var centre4 = {
     centreName: "KLCC 1 & 2",
     centreAddress: "Puchong, Malaysia",
-    batch: []
+    vaccineBatches: []
 }
 
 //hard-coded admin
 var adminObj = {
+    //store centre1 object in adminObj
     healthcareCentre: centre1,
     username: "Han",
     password: "admin123",
@@ -49,27 +50,34 @@ var adminObj = {
 
 //hard-coded vaccines
 var vaccine1 = {
+    //store vaccineBatches array in vaccine object
+    batches: [],
     vacName: "Pfizer",
-    manufacturer: "PfizerManufacture",
-    batch: []
+    manufacturer: "PfizerManufacture"
+    
 }
 
 var vaccine2 = {
+    //store vaccineBatches array in vaccine object
+    batches: [],
     vacName: "Astrazenaca",
-    manufacturer: "AstrazenacaManufacture",
-    batch: []
+    manufacturer: "AstrazenacaManufacture"
 }
 
 var vaccine3 = {
+    //store vaccineBatches array in vaccine object
+    batches: [],
     vacName: "Sinovac",
-    manufacturer: "SinovacManufacture",
-    batch: []
+    manufacturer: "SinovacManufacture"
 }
 
 patients.push(patientObj);
 admins.push(adminObj);
 healthcareCentres.push(centre1, centre2, centre3, centre4);
 vaccines.push(vaccine1, vaccine2, vaccine3);
+
+//hard-coded to show healthcare centre name in admin page after logging in
+let currentAdmin = adminObj;
 
 //patient Sign Up
 function patientSignUp(){
@@ -102,7 +110,7 @@ function adminSignUp(){
     newAdminObj.staffID = document.getElementById('inStaffID').value;
 
     if(newAdminObj.centre!="" && newAdminObj.username !="" && newAdminObj.password !="" && newAdminObj.fullname!="" &&newAdminObj .email!="" && newAdminObj.staffID != ""){
-        //store new patient object into patients array
+        //store new admin object into admins array
         admins.push(newAdminObj);
         alert("Your account has been saved");
         window.location.replace("login.html");
@@ -127,15 +135,16 @@ function login(){
         return false;
       }
 
-    for(var i=0; i<= patients.length; i++){
+    for(var i=0; i< patients.length; i++){
         if(patients[i].username == inUsername && patients[i].password == inPassword){
-            alert("Welcome, " + patients[i].username);
+            alert("Welcome, " + patients[i].username);           
             window.location.replace("RequestVaccinationAppointment.html");
         }
         else{
-            for(var i=0; i<= admins.length; i++){
+            for(var i=0; i< admins.length; i++){
                 if(admins[i].username == inUsername && admins[i].password == inPassword){
                     alert("Welcome, " + admins[i].username + " (HealthcareCentre name: " + admins[i].healthcareCentre.centreName + ")");
+                    currentAdmin = admins[i];
                     window.location.replace("recordNewVaccineBatch.html");
                 }
                 else{
@@ -144,10 +153,46 @@ function login(){
             }
         }
     }
+}
+    //record new vaccine batch
+    function recordVaccineBatch(){
+        let vaccineBatch = new Object();
+        vaccineBatch.selectedVaccine = "";
+        if (document.getElementById('rad1').checked) {
+            vaccineBatch.selectedVaccine = document.getElementById('rad1').value;
+          } 
+        if (document.getElementById('rad2').checked) {
+            vaccineBatch.selectedVaccine = document.getElementById('rad2').value;
+        } 
+        if (document.getElementById('rad3').checked) {
+            vaccineBatch.selectedVaccine = document.getElementById('rad3').value;
+        } 
+        
+        vaccineBatch.batchNo = document.getElementById('batchNo').value;
+        vaccineBatch.exDate = document.getElementById('exDate').value;
+        vaccineBatch.quantityAv = document.getElementById('quantityAv').value;
+
+        //validate input
+        if(vaccineBatch.selectedVaccine!="" && vaccineBatch.batchNo != "" && vaccineBatch.exDate != "" && vaccineBatch.quantityAv){
+            for(var i=0; i<vaccines.length; i++){
+                //retrieve vaccine object which is same vaccine name as vaccineBatch.selectedVaccine
+                if(vaccines[i].vacName == vaccineBatch.selectedVaccine){
+                    //add created vaccineBatch object into batches array in the vaccine object
+                    vaccines[i].batches.push(vaccineBatch);
+                    //add created vaccineBatch object into batches array in the current admin's healthcare centre object
+                    currentAdmin.healthcareCentre.vaccineBatches.push(vaccineBatch);
+                    alert("You have successfully recorded a vaccine batch!")
+                    //reset the form 
+                    document.getElementById("rvbi").reset();
+                    return;
+                }
+            }
+        }
+        alert("Please fill up the record vaccine batch form")
+    }
 
     //Generate VaccinationID
 
-    
     (function() {
         function IDGenerator() {
         
@@ -190,7 +235,6 @@ function login(){
         
     })();
    
-   
 
-}
+ 
 
