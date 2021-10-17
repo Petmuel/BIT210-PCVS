@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     
     
-    <title>Available Vaccines Batch</title>
+    <title>Pfizer</title>
 
     
     
@@ -104,74 +104,73 @@
           <div style="overflow-x:auto;">
           <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
-              <h2 class="heading-section">Available Vaccines Batch </h2>
+              <h2 class="heading-section">Vaccination Appointment </h2>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
-              <h4 class="text-center mb-4">Request Vaccine Appointment</h4>
+              <h4 class="text-center mb-4">Pfizer Vaccine </h4>
               <br><br>
               <div class="table-wrap">
                 <table class="table">
                   <thead class="thead-primary">
                     <tr>
-                      <th>Name</th>
+                      <th>Batch</th>
                       <th>BatchNo</th>
-                      <th>Expirition</th>
-                      <th>Quantity</th>
-                      <th>Select BatchNo </th>
+                      <th>Expiry Date & Quantity</th>
+                      <th>Request Appointment</th>
                     </tr>
                   </thead>
                   
                   <tbody>
+                    <tr>
+                      <th scope="row" class="scope" ><br>BatchNo</th>
+                      
+                      <td><br><select id="Healthcare" onchange="ChangeHealthList()">
+                        <option value="">-- Batch Number --</option> 
+                        <option value="B1">BatchNo1</option> 
+                        <option value="B2">BatchNo2</option> 
+                        <option value="B3">BatchNo3</option> 
+                        <option value="B4">BatchNo4</option> 
+                      </select> </td>
+                      
+                      <td><br>
+                        <select id="HCAddress">
+                        <option value="">-- Expiry Date & Quantity --</option>
+                      </select> 
+
+                      
+                      <script>
+                      var Address = {};
+                      Address['B1'] = ['12/04/2022 & 1,000,000 doses'];
+                      Address['B2'] = ['01/02/2022 & 500,000 doses'];
+                      Address['B3'] = ['01/12/2021 & 100,000 doses'];
+                      Address['B4'] = ['10/03/2022 & 300,000 doses'];
+                      
+                      function ChangeHealthList() {
+                        var HealthList = document.getElementById("Healthcare");
+                        var HCAddressList = document.getElementById("HCAddress");
+                        var selAdd = HealthList.options[HealthList.selectedIndex].value;
+                        while (HCAddressList.options.length) {
+                            HCAddressList.remove(0);
+                        }
+                        var HealthcareCenter = Address[selAdd];
+                        if (HealthcareCenter) {
+                          var i;
+                          for (i = 0; i < HealthcareCenter.length; i++) {
+                            var Healthcare = new Option(HealthcareCenter[i], i);
+                            HCAddressList.options.add(Healthcare);
+                          }
+                        }
+                      } 
+                      </script>
+                      </td>
                     
-
-
-                    <tr>
-                      <th scope="row" class="scope" ><br>Pfizer</th>
-                      <td><br>BatchNo1</td>
-                      <td><br>Not Yet Expired</td>
-                      <td><br>Available</td>
-                      
                     
-                      <td><br><button onclick="document.location='vaccineBatch.html'">Select BatchNo1</button></td>
+                </select></td>
+                      <td><br><button onclick="document.location='vaccineBatch.html'">Appointment</button></td>
                     </tr>
-
-
-                    <tr>
-                      <th scope="row" class="scope" ><br>Moderna</th>
-                      <td><br>BatchNo2</td>
-                      <td><br>Not Yet Expired</td>
-                      <td><br>Available</td>
-                      
-
-
-                      <td><br><button onclick="document.location='vaccineBatch.html'">Select BatchNo2</button></td>
-                    </tr>
-
-
-
-                    <tr>
-                      <th scope="row" class="scope" ><br>Johnson & Johnson</th>
-                      <td><br>BatchNo3</td>
-                      <td><br>Not Yet Expired</td>
-                      <td><br>Available</td>
-                      
-
-                      <td><br><button onclick="document.location='vaccineBatch.html'">Select BatchNo3</button></td>
-                    </tr>
-
-
                     
-                    <tr>
-                      <th scope="row" class="scope" ><br>AstraZeneca</th>
-                      <td><br>BatchNo4</td>
-                      <td><br>Not Yet Expired</td>
-                      <td><br>Available</td>
-                      
-                      <td><br><button onclick="document.location='vaccineBatch.html'">Select BatchNo4</button></td>
-                    </tr>
-                  
                   </tbody>
                 </table>
               </div>
@@ -210,7 +209,8 @@
           </div>
 
           <div class="col-sm-6">
-              <br><br>
+
+            <br><br>
 
 
             <h4>Contact Us</h4>
