@@ -10,6 +10,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
+    <style>
+      
+
+.center {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+      
+    </style>
+
     <script>
       //Generate VaccinationID
 
@@ -57,6 +69,22 @@
     })();
 
 
+   
+            //function showMessage() {
+                //alert("Hello friends, this is message.");
+            //}
+        
+
+            function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === "Hello") {
+    x.innerHTML = "Swapped text!";
+  } else {
+    x.innerHTML = "Your Vaccination Status is: PENDING";
+  }
+}
+
+  
 
 
     </script>
@@ -149,23 +177,37 @@
     <br><br>
     <br><br>
 
+    
+
 
     <section class="ftco-section" id="body">
         <div class="container1">
           <div style="overflow-x:auto;">
           <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
-              <h2 class="heading-section">Vaccination Appointment </h2>
+              <br><br><br>
+              <h2 class="center" class="heading-section">Vaccination Status </h2>
             </div>
           </div>
+          
+
+          
           <div class="row">
             <div class="col-md-12">
-              <h4 class="text-center mb-4">Vaccination Status </h4>
               <br><br>
+              
+             <b> <p class="center">To see your Vaccination Status, click the button below.</p></b><br>
+            
+              
+              <br>
+              <p class="center"><button onclick="myFunction()" id="generate">Vaccination Status
+              </button><b><br><br><br>Your Vaccination ID is: </p></b>
+              <p class="center"><code id="output"></code></p>	  
 
+              <b><div class="center" id="myDIV"></div></b>
 
-              <p><button id="generate">Generate</button></p>
-              <p><code id="output"></code></p>	  
+              
+              
 
 
       <br><br>
