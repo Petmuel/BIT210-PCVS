@@ -13,7 +13,36 @@
   <!-- Stylesheet CSS -->
   <link rel="stylesheet" href="style.css">
 
+  <style>
+
+    #bckgrnd{
+      background-color: rgb(245, 241, 255);
+    }
+
+    #tbl{
+      background-color: rgb(237, 226, 247);
+    }
+
+
+    #btn{
+      color: black;
+      height: 50px;
+      width: auto; 
+      overflow: auto; 
+      border: inset black 0.1em;
+      background-color: rgb(208, 184, 236);
+      border: 1px solid #8e21f5;
+      
+    }
+
+
+    
+
+
+  </style>
+
   <title>View Vaccine Batch Information</title>
+
 </head>
 
 <body id="VVBIPage">
@@ -73,12 +102,13 @@
   </nav>
   
   <!--list of vaccinations-->
-  <div class="py-5 px-3 mt-5 text-center bg-danger bg-gradient">
+  <div  id="bckgrnd" class="py-5 px-3 mt-5 text-center  ">
     <!--shadow behind div with rounded corners-->
-    <div class="container bg-info shadow-lg py-3 px-4 rounded-3">
+    <br><br>
+    <div id="tbl" class="container  shadow-lg py-3 px-4 rounded-3">
       <h3>List of Vaccinations</h3>
-      <div class="row horizontalOverflow shadow-lg">
-        <table>
+      <div  class="row horizontalOverflow shadow-lg">
+        <table  >
           <tr class="bg-white border-1">
             <th class="p-3">Select</th>
             <th class="p-3">VaccinationID</th>
@@ -87,43 +117,46 @@
           </tr>
           
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination01</td>
             <td class="p-3">Pending</td>
-            <td class="p-3">18/10/2021</td>
+            <td class="p-3">01/12/2021</td>
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination02</td>
             <td class="p-3">Pending</td>
-            <td class="p-3">28/10/2021</td>
+            <td class="p-3">28/01/2022</td>
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination03</td>
             <td class="p-3">Pending</td>
-            <td class="p-3">18/11/2021</td>
+            <td class="p-3">15/02/2022</td>
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination04</td>
             <td class="p-3">Pending</td>
-            <td class="p-3">21/11/2021</td>
+            <td class="p-3">20/12/2021</td>
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination05</td>
             <td class="p-3">Pending</td>
-            <td class="p-3">30/11/2021</td>
+            <td class="p-3">11/11/2021</td>
           </tr>
+          
         </table>
+        
       </div>
     </div>
   </div>
+  
 
 
  <!-- ======= Footer ======= -->
@@ -148,6 +181,7 @@
 
           <div class="col-sm-6">
 
+            <br><br>
 
             <h4>Contact Us</h4>
             <p>
