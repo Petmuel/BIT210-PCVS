@@ -9,6 +9,112 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+
+      
+
+.center {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+
+select {
+height: 50px;
+ width: auto; 
+ overflow: auto; 
+ border: inset black 0.1em; }
+
+
+#Confbutton{
+height: 50px;
+width: auto; 
+overflow: auto; 
+border: inset black 0.1em;
+background-color: rgb(211, 241, 255);
+}
+
+
+#Rejbutton{
+height: 50px;
+width:75px; 
+overflow: auto; 
+border: inset black 0.1em;
+background-color: rgb(250, 167, 119);
+}
+
+
+#Adminbutton{
+align-items: center;
+height: 50px;
+width: auto; 
+overflow: auto; 
+border: inset black 0.1em;
+background-color: rgb(201, 241, 208);
+}
+
+#AdButton{
+text-align: center;
+}
+
+      
+    </style>
+
+    <script>
+
+     function showMessageAcc() {
+        alert("The status is set to 'confirmed'.");
+     }
+
+
+
+     function showMessageRej() {
+        alert("The status is set to 'rejected'.");
+     }
+
+
+     function showMessageAdmin() {
+        alert("The vaccination status is set to ‘administered’ ,                                  The quantity changed to '999/999'");
+     } 
+
+
+
+     
+                      var Address = {};
+                      Address['44417633'] = 
+                      ['Putra Wati,  BatchNo1 J21079032,  12/04/2022,  Pfizer-BioNTech,  Pfizer, Vaccination Date: 01/12/2021'];
+                      Address['24554357'] =
+                      ['Alex Travers,  BatchNo2 B21793541,  01/02/2022,  Moderna,  Moderna, Vaccination Date: 28/01/2022'];
+                      Address['63731625'] = 
+                      ['Kylie Verna,  BatchNo3 N12759915,  01/12/2022,  Johnson & Johnson (J&J),  Johnson&Johnson, Vaccination Date: 15/02/2022'];
+                      Address['74757799'] = 
+                      ['Lilibet Lorna,  BatchNo4 A83365120,  10/03/2022,  Oxford–AstraZeneca,  AstraZeneca, Vaccination Date: 20/12/2021'];
+                      Address['35602718'] = 
+                      ['Elwyn Kenny,  BatchNo1 L10088216,  12/04/2022,  Pfizer-BioNTech,  Pfizer, Vaccination Date: 11/11/2021'];
+                      
+                      function ChangeHealthList() {
+                        var HealthList = document.getElementById("Healthcare");
+                        var HCAddressList = document.getElementById("HCAddress");
+                        var selAdd = HealthList.options[HealthList.selectedIndex].value;
+                        while (HCAddressList.options.length) {
+                            HCAddressList.remove(0);
+                        }
+                        var HealthcareCenter = Address[selAdd];
+                        if (HealthcareCenter) {
+                          var i;
+                          for (i = 0; i < HealthcareCenter.length; i++) {
+                            var Healthcare = new Option(HealthcareCenter[i], i);
+                            HCAddressList.options.add(Healthcare);
+                          }
+                        }
+                      } 
+
+
+    </script>
     
     
     <title>Confirm</title>
@@ -99,6 +205,9 @@
     <br><br>
 
     
+    <br><br>
+    <br><br>
+
 
     <section class="ftco-section" id="body">
         <div class="container1">
@@ -110,21 +219,103 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <h4 class="text-center mb-4">Patient Status </h4>
+              <h5 class="text-center mb-4">Select Vaccine ID to show the full information </h5>
               <br><br>
-              <p>Please click the button to show the full information about Patient Status</p>
+              <div class="table-wrap">
+                <table class="table">
+                  <thead class="thead-primary">
+                    <tr>
+                      
+                      <th>Vaccine ID</th>
+                      <th>Information</th>
+                      <th>Confirm</th>
+                      <th>Reject</th>
+                      
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                    <tr>
+                      
+                      <td><br><select id="Healthcare" onchange="ChangeHealthList()">
+                        <option value="">-- Vaccine ID --</option>
+                    <option value="44417633" id="44417633">44417633</option>
+                    <option value="24554357" id="24554357">24554357</option>
+                    <option value="63731625" id="63731625">63731625</option>
+                    <option value="74757799" id="74757799">74757799</option>`
+                    <option value="35602718" id="35602718">35602718</option>
+            </select> </td>
+                      
+                      <td><br>
+                        <select id="HCAddress">
+                
+                            <option value="">-- Information --</option>
+            
+                        </select></td>
 
 
-              <p><button id="generate">Patient Info</button></p>
-              <p><code id="output"></code></p>	  
 
+
+                    <td ><br><button id="Confbutton" onclick="showMessageAcc()">Confirm</button></td>
+
+                    <td ><br><button id="Rejbutton" onclick="showMessageRej()">Reject</button></td>
+
+                      
+                    
+                    
+                </select></td>
+                     
+                  </tbody>
+
+                  
+                  
+                </table>
+
+                <br><br><br>
+
+
+
+      <p id="AdButton"><b>Confirm the Vaccination has been administered:  </b> <br><br>
+
+                    
+      <button id="Adminbutton" onclick="showMessageAdmin()">Select to Confirm</button>
+
+    </p>
+
+
+      <br><br><br>
+
+
+                
+              </div>
+
+              
+            </div>
+            
+            </div>
+          </div>
+        </div>
+
+        
+        
+      </section>
+
+      
 
       <br><br>
 
       <hr>
-
-
     
+
+
+
+
+       
+
+
+
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="section-bg">
