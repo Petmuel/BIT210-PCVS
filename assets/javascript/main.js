@@ -3,6 +3,7 @@ let patients = [];
 let admins = [];
 let healthcareCentres = [];
 let vaccines = [];
+let batches = [];
 
 //hard-coded patient
 var patientObj = {
@@ -45,6 +46,7 @@ var adminObj = {
     username: "Han",
     password: "admin123",
     email: "hanAdmin@gmail.com",
+    fullName: "Han Vui Ern Samuel",
     staffID:"admin01"
 }
 
@@ -71,10 +73,49 @@ var vaccine3 = {
     manufacturer: "SinovacManufacture"
 }
 
+//hard-coded vaccine batches
+var batch1 = {
+    //store vaccinations array in vaccine object
+    vaccination: [],
+    batchNo: "BatchNo01",
+    vacName: "Pfizer",
+    pendingAppointment: 3,
+    exDate: "18/10/2021",
+    quantityAv: 20,
+    quantityPending: 3,
+    quantityAd: 0
+}
+
+var batch2 = {
+    //store vaccinations array in vaccine object
+    vaccination: [],
+    batchNo: "BatchNo02",
+    vacName: "Sinovac",
+    pendingAppointment: 10,
+    exDate: "20/10/2021",
+    quantityAv: 40, 
+    quantityPending: 10,
+    quantityAd: 0
+}
+
+var batch3 = {
+    //store vaccinations array in vaccine object
+    vaccination: [],
+    batchNo: "BatchNo03",
+    vacName: "Astrazenaca",
+    pendingAppointment: 2,
+    exDate: "30/10/2021",
+    quantityAv: 60,
+    quantityPending: 2,
+    quantityAd: 0
+}
+
+//store all variables in its array respectively
 patients.push(patientObj);
 admins.push(adminObj);
 healthcareCentres.push(centre1, centre2, centre3, centre4);
 vaccines.push(vaccine1, vaccine2, vaccine3);
+batches.push(batch1, batch2, batch3);
 
 //hard-coded to show healthcare centre name in admin page after logging in
 let currentAdmin = adminObj;
@@ -191,7 +232,8 @@ function login(){
         alert("Please fill up the record vaccine batch form")
     }
 
-    //Generate VaccinationID
+   
+    /*Generate VaccinationID
 
     (function() {
         function IDGenerator() {
@@ -235,6 +277,6 @@ function login(){
         
     })();
    
-
+*/
  
 

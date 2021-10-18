@@ -39,8 +39,9 @@
       <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler">
         <!--Add icon for the toggle button-->
         <span class="navbar-toggler-icon"></span>
-
       </button>
+      <!--admin's healthcare centre name is shown -->
+      <span id="callCentreName"></span>
       <!--to ensure that this tag to have responsive design to make nav bar function properly-->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
@@ -65,18 +66,6 @@
           </li>
         </ul>
       </div>
-
-      <!--Create search bar-->
-      <!--
-          form-control: create some of the stylings for the input
-        
-        <form action="#" class="d-flex">
-          <input type="text" class="form-control me-2" name="search">
-          <button type="submit" class="btn btn-outline-success">
-            Search
-          </button>
-        </form>
-      -->
     </div>
   </nav>
 
@@ -86,7 +75,7 @@
         <div class="d-flex justify-content-center align-items-center">
           <div class="introTitle justify-content-center align-items-center">
             <!--admin's healthcare centre name is shown -->
-            <h1 class="text-warning" id="callCentreName"></h1>
+            <h1 class="text-warning">Welcome to PCVS!</h1>
 
             <h4>Record New Vaccine Batch</h4>
             <p>A list of available vaccines is shown below for you to select and record a new vaccine batch.</p>
@@ -242,7 +231,6 @@
   <script src="assets/javascript/main.js"></script>
 
   <script>
-    //calling out centre name from adminObj from main.js
     //show healthcare centre name after admin logs in
     document.getElementById('callCentreName').innerHTML = "Healthcare Centre: " + currentAdmin.healthcareCentre.centreName;
   </script>
