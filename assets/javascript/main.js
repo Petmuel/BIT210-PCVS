@@ -233,7 +233,7 @@ function login(){
     }
 
    
-    /*Generate VaccinationID
+    //Generate VaccinationID
 
     (function() {
         function IDGenerator() {
@@ -277,6 +277,6 @@ function login(){
         
     })();
    
-*/
+
  
 
