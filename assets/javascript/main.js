@@ -1,3 +1,9 @@
+/*
+*
+* Han Vui Ern Samuel
+*
+*/
+
 //collections 
 let patients = [];
 let admins = [];
@@ -195,88 +201,94 @@ function login(){
         }
     }
 }
-    //record new vaccine batch
-    function recordVaccineBatch(){
-        let vaccineBatch = new Object();
-        vaccineBatch.selectedVaccine = "";
-        if (document.getElementById('rad1').checked) {
-            vaccineBatch.selectedVaccine = document.getElementById('rad1').value;
-          } 
-        if (document.getElementById('rad2').checked) {
-            vaccineBatch.selectedVaccine = document.getElementById('rad2').value;
+//record new vaccine batch
+function recordVaccineBatch(){
+    let vaccineBatch = new Object();
+    vaccineBatch.selectedVaccine = "";
+    if (document.getElementById('rad1').checked) {
+        vaccineBatch.selectedVaccine = document.getElementById('rad1').value;
         } 
-        if (document.getElementById('rad3').checked) {
-            vaccineBatch.selectedVaccine = document.getElementById('rad3').value;
-        } 
-        
-        vaccineBatch.batchNo = document.getElementById('batchNo').value;
-        vaccineBatch.exDate = document.getElementById('exDate').value;
-        vaccineBatch.quantityAv = document.getElementById('quantityAv').value;
+    if (document.getElementById('rad2').checked) {
+        vaccineBatch.selectedVaccine = document.getElementById('rad2').value;
+    } 
+    if (document.getElementById('rad3').checked) {
+        vaccineBatch.selectedVaccine = document.getElementById('rad3').value;
+    } 
+    
+    vaccineBatch.batchNo = document.getElementById('batchNo').value;
+    vaccineBatch.exDate = document.getElementById('exDate').value;
+    vaccineBatch.quantityAv = document.getElementById('quantityAv').value;
 
-        //validate input
-        if(vaccineBatch.selectedVaccine!="" && vaccineBatch.batchNo != "" && vaccineBatch.exDate != "" && vaccineBatch.quantityAv){
-            for(var i=0; i<vaccines.length; i++){
-                //retrieve vaccine object which is same vaccine name as vaccineBatch.selectedVaccine
-                if(vaccines[i].vacName == vaccineBatch.selectedVaccine){
-                    //add created vaccineBatch object into batches array in the vaccine object
-                    vaccines[i].batches.push(vaccineBatch);
-                    //add created vaccineBatch object into batches array in the current admin's healthcare centre object
-                    currentAdmin.healthcareCentre.vaccineBatches.push(vaccineBatch);
-                    alert("You have successfully recorded a vaccine batch!")
-                    //reset the form 
-                    document.getElementById("rvbi").reset();
-                    return;
-                }
+    //validate input
+    if(vaccineBatch.selectedVaccine!="" && vaccineBatch.batchNo != "" && vaccineBatch.exDate != "" && vaccineBatch.quantityAv){
+        for(var i=0; i<vaccines.length; i++){
+            //retrieve vaccine object which is same vaccine name as vaccineBatch.selectedVaccine
+            if(vaccines[i].vacName == vaccineBatch.selectedVaccine){
+                //add created vaccineBatch object into batches array in the vaccine object
+                vaccines[i].batches.push(vaccineBatch);
+                //add created vaccineBatch object into batches array in the current admin's healthcare centre object
+                currentAdmin.healthcareCentre.vaccineBatches.push(vaccineBatch);
+                alert("You have successfully recorded a vaccine batch!")
+                //reset the form 
+                document.getElementById("rvbi").reset();
+                return;
             }
         }
-        alert("Please fill up the record vaccine batch form")
     }
+    alert("Please fill up the record vaccine batch form")
+}
 
-   
-    //Generate VaccinationID
+/*
+*
+*
+* Parnia Sakhaei
+* 
+* 
+*/
+//Generate VaccinationID
 
-    (function() {
-        function IDGenerator() {
+(function() {
+    function IDGenerator() {
+    
+        this.length = 8;
+        this.timestamp = +new Date;
         
-            this.length = 8;
-            this.timestamp = +new Date;
-            
-            var _getRandomInt = function( min, max ) {
-               return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
-            }
-            
-            this.generate = function() {
-                var ts = this.timestamp.toString();
-                var parts = ts.split( "" ).reverse();
-                var id = "";
-                
-                for( var i = 0; i < this.length; ++i ) {
-                   var index = _getRandomInt( 0, parts.length - 1 );
-                   id += parts[index];	 
-                }
-                
-                return id;
-            }
-   
-            
+        var _getRandomInt = function( min, max ) {
+            return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
         }
         
-        
-        document.addEventListener( "DOMContentLoaded", function() {
-           var btn = document.querySelector( "#generate" ),
-               output = document.querySelector( "#output" );
-               
-           btn.addEventListener( "click", function() {
-               var generator = new IDGenerator();
-               output.innerHTML = generator.generate();
-               
-           }, false); 
+        this.generate = function() {
+            var ts = this.timestamp.toString();
+            var parts = ts.split( "" ).reverse();
+            var id = "";
             
-        });
-        
-        
-    })();
-   
+            for( var i = 0; i < this.length; ++i ) {
+                var index = _getRandomInt( 0, parts.length - 1 );
+                id += parts[index];	 
+            }
+            
+            return id;
+        }
 
- 
+        
+    }
+    
+    
+    document.addEventListener( "DOMContentLoaded", function() {
+        var btn = document.querySelector( "#generate" ),
+            output = document.querySelector( "#output" );
+            
+        btn.addEventListener( "click", function() {
+            var generator = new IDGenerator();
+            output.innerHTML = generator.generate();
+            
+        }, false); 
+        
+    });
+    
+    
+})();
+
+
+
 
