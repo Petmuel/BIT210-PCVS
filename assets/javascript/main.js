@@ -179,7 +179,7 @@ function login(){
     for(var i=0; i< patients.length; i++){
         if(patients[i].username == inUsername && patients[i].password == inPassword){
             alert("Welcome, " + patients[i].username);           
-            window.location.replace("RequestVaccinationAppointment.html");
+            window.location.replace("requestVaccinationAppointment.html");
         }
         else{
             for(var i=0; i< admins.length; i++){
