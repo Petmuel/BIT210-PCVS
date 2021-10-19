@@ -135,10 +135,11 @@ function patientSignUp(){
     newPatientObj.email = document.getElementById('email').value;
     newPatientObj.icPassport = document.getElementById('Passport/IC').value
 
-    if(newPatientObj.username !="" && newPatientObj.password !="" && newPatientObj.fullname!="" && newPatientObj.email!="" && newPatientObj.icPassport!="" ){
+    if(newPatientObj.username !="" && newPatientObj.password !="" && newPatientObj.fullname!="" 
+        && newPatientObj.email!="" && newPatientObj.icPassport!="" ){
         //store new patient object into patients array
         patients.push(newPatientObj);
-        alert("Your account has been saved");
+        alert("You have successfully signed up your account");
         window.location.replace("login.html");
     }
     else{
@@ -156,10 +157,11 @@ function adminSignUp(){
     newAdminObj.email = document.getElementById('aEmail').value;
     newAdminObj.staffID = document.getElementById('inStaffID').value;
 
-    if(newAdminObj.centre!="" && newAdminObj.username !="" && newAdminObj.password !="" && newAdminObj.fullname!="" &&newAdminObj .email!="" && newAdminObj.staffID != ""){
+    if(newAdminObj.centre!="" && newAdminObj.username !="" && newAdminObj.password !="" 
+        && newAdminObj.fullname!="" &&newAdminObj .email!="" && newAdminObj.staffID != ""){
         //store new admin object into admins array
         admins.push(newAdminObj);
-        alert("Your account has been saved");
+        alert("You have successfully signed up your account");
         window.location.replace("login.html");
     }
     else{
@@ -220,7 +222,8 @@ function recordVaccineBatch(){
     vaccineBatch.quantityAv = document.getElementById('quantityAv').value;
 
     //validate input
-    if(vaccineBatch.selectedVaccine!="" && vaccineBatch.batchNo != "" && vaccineBatch.exDate != "" && vaccineBatch.quantityAv){
+    if(vaccineBatch.selectedVaccine!="" && vaccineBatch.batchNo != "" 
+        && vaccineBatch.exDate != "" && vaccineBatch.quantityAv){
         for(var i=0; i<vaccines.length; i++){
             //retrieve vaccine object which is same vaccine name as vaccineBatch.selectedVaccine
             if(vaccines[i].vacName == vaccineBatch.selectedVaccine){
