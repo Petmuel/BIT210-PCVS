@@ -22,7 +22,7 @@ var patientObj = {
 
 //hard-coded healthcareCentre to show them in use case 1, 2, 3 and 4
 var centre1 = {
-    centreName: "University Kebangsaan",
+    centreName: "Queens",
     centreAddress: "Puchong, Malaysia",
     vaccineBatches: []
 }
