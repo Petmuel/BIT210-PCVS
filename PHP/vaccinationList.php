@@ -58,7 +58,7 @@
     <div class="container">
       <!--Put title and image of the website-->
       <a href="#" class="navbar-brand mb-0 h1">
-        <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+        <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
         PCVS
       </a>
       <!--admin's healthcare centre name is shown -->
@@ -79,14 +79,14 @@
         <ul class="navbar-nav">
           <!--go to record new vaccine batch page-->
           <li class="nav-item">
-            <a href="recordNewVaccineBatch.html" class="nav-link" role="button">
+            <a href="recordNewVaccineBatch.php" class="nav-link" role="button">
               Record New Vaccine Batch
             </a>
           </li>
 
           <!--go to view vaccine batch information page-->
           <li class="nav-item">
-            <a href="viewVaccineBatchInfo.html" class="nav-link" role="button">
+            <a href="viewVaccineBatchInfo.php" class="nav-link" role="button">
               View Vaccine Batch Information
             </a>
           </li>
@@ -99,7 +99,7 @@
 
           <!--log out-->
           <li class="nav-item">
-            <a href="index.html" class="nav-link" role="button">
+            <a href="index.php" class="nav-link" role="button">
               Log Out
             </a>
           </li>
@@ -132,28 +132,28 @@
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination02</td>
             <td class="p-3">Pending</td>
             <td class="p-3">28/01/2022</td>
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination03</td>
             <td class="p-3">Pending</td>
             <td class="p-3">15/02/2022</td>
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination04</td>
             <td class="p-3">Pending</td>
             <td class="p-3">20/12/2021</td>
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination05</td>
             <td class="p-3">Pending</td>
             <td class="p-3">11/11/2021</td>
@@ -175,7 +175,7 @@
           <div class="col-sm-6">
 
             <div class="footer-info">
-              <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+              <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
               <h3>PCVS</h3>
               <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
                 Vaccination System will help allowing the health ministry to keep
@@ -226,7 +226,7 @@
     crossorigin="anonymous"></script>
 
   <!--javascript-->
-  <script src="assets/javascript/main.js"></script>
+  <script src="../assets/javascript/main.js"></script>
 
   <script>
     //show healthcare centre name after admin logs in
