@@ -107,7 +107,7 @@
       <div class="container">
         <!--Put title and image of the website-->
         <a href="#" class="navbar-brand mb-0 h1">
-          <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+          <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
           PCVS
         </a>
 
@@ -134,7 +134,7 @@
 
             <!--log out-->
             <li class="nav-item">
-              <a href="index.html" class="nav-link transition" role="button">
+              <a href="index.php" class="nav-link transition" role="button">
                 Log Out
               </a>
             </li>

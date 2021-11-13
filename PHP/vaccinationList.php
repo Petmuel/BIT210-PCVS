@@ -125,7 +125,7 @@
           </tr>
           
           <tr class="bg-white border-1">
-            <td><a href="confirm.html" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
+            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
             <td class="p-3">Vaccination01</td>
             <td class="p-3">Pending</td>
             <td class="p-3">01/12/2021</td>
