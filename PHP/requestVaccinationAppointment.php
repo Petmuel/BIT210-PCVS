@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Javascript testing.js-->
-    <script src="assets/javascript/nameOrHcName.js"></script>
+    <script src="../assets/javascript/nameOrHcName.js"></script>
     
     <title>Available Vaccine</title>
 
@@ -45,7 +45,7 @@
       <div class="container">
         <!--Put title and image of the website-->
         <a href="#" class="navbar-brand mb-0 h1">
-          <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+          <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
           PCVS
         </a>
 
@@ -73,7 +73,7 @@
 
             <!--log Out-->
             <li class="nav-item">
-              <a href="index.html" class="nav-link transition" role="button">
+              <a href="index.php" class="nav-link transition" role="button">
                 Log Out
               </a>
             </li>
@@ -88,7 +88,7 @@
 
 
     <!--.img-fluid: make image responsive (max-width: 100%, height: auto)-->
-    <img src="img/vaccination5.png" alt="vaccinationClipArt" class="img-fluid">
+    <img src="../img/vaccination5.png" alt="vaccinationClipArt" class="img-fluid">
 
     <br><br>
     <br><br>
@@ -121,7 +121,7 @@
                     <th scope="row" class="scope" ><br>Pfizer</th>
                     <td><br>Pfizer-BioNTech</td>
                     
-                    <td><br><button onclick="document.location='Pfizer.html'">View BatchNo</button></td>
+                    <td><br><button onclick="document.location='Pfizer.php'">View BatchNo</button></td>
                   </tr>
 
 
@@ -130,7 +130,7 @@
                     <th scope="row" class="scope" ><br>Moderna</th>
                     <td><br>Moderna</td>
                     
-                    <td><br><button onclick="document.location='Moderna.html'">View BatchNo</button></td>
+                    <td><br><button onclick="document.location='Moderna.php'">View BatchNo</button></td>
                   </tr>
 
 
@@ -138,7 +138,7 @@
                     <th scope="row" class="scope" ><br>Johnson & Johnson's Janssen</th>
                     <td><br>Johnson & Johnson (J&J)</td>
                     
-                    <td><br><button onclick="document.location='Johnson.html'">View BatchNo</button></td>
+                    <td><br><button onclick="document.location='Johnson.php'">View BatchNo</button></td>
                   </tr>
 
 
@@ -146,7 +146,7 @@
                     <th scope="row" class="scope" ><br>AstraZeneca</th>
                     <td><br>Oxford–AstraZeneca</td>
                     
-                    <td><br><button onclick="document.location='AstraZeneca.html'">View BatchNo</button></td>
+                    <td><br><button onclick="document.location='AstraZeneca.php'">View BatchNo</button></td>
                   </tr>
                   
                 
@@ -171,7 +171,7 @@
             <div class="col-sm-6">
 
               <div class="footer-info">
-                <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+                <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
                 <h3>PCVS</h3>
                 <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
                   Vaccination System will help allowing the health ministry to keep
@@ -216,7 +216,7 @@
 
     <!-- Javascript -->
 
-  <script src="assets/javascript//main.js"></script>
+  <script src="../assets/javascript//main.js"></script>
 
     <script type="text/javascript">
       //calling out string variable (centre) from nameOrHcName.js

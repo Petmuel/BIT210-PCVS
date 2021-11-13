@@ -28,7 +28,7 @@
       <div class="container">
         <!--Put title and image of the website-->
         <a href="#" class="navbar-brand mb-0 h1">
-          <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+          <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
           PCVS
         </a>
 
@@ -55,14 +55,14 @@
 
             <!--request vaccination appointment page-->
             <li class="nav-item">
-              <a href="requestVaccinationAppointment.html" class="nav-link transition" role="button">
+              <a href="requestVaccinationAppointment.php" class="nav-link transition" role="button">
                 Request Vaccination Appointment
               </a>
             </li>
             
              <!--log Out-->
             <li class="nav-item">
-              <a href="index.html" class="nav-link transition" role="button">
+              <a href="index.php" class="nav-link transition" role="button">
                 Log Out
               </a>
             </li>
@@ -154,7 +154,7 @@
                     
                     
                 </select></td>
-                      <td><br><button onclick="document.location='vaccineBatch.html'">View Batches</button></td>
+                      <td><br><button onclick="document.location='vaccineBatch.php'">View Batches</button></td>
                     </tr>
                     
                   </tbody>
@@ -182,7 +182,7 @@
           <div class="col-sm-6">
 
             <div class="footer-info">
-              <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+              <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
               <h3>PCVS</h3>
               <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
                 Vaccination System will help allowing the health ministry to keep
@@ -230,7 +230,7 @@
     
 <!-- Javascript -->
 
-<script src="assets/javascript//main.js"></script>
+<script src="../assets/javascript//main.js"></script>
 
 
     
