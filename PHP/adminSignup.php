@@ -37,7 +37,7 @@
     <div class="container">
       <!--Put title and image of the website-->
       <a href="#" class="navbar-brand mb-0 h1">
-        <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+        <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
         PCVS
       </a>
 
@@ -166,7 +166,7 @@
         <div class="col-sm-6">
 
           <div class="footer-info">
-            <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+            <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
             <h3>PCVS</h3>
             <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
               Vaccination System will help allowing the health ministry to keep

@@ -27,7 +27,7 @@
     <div class="container">
       <!--Put title and image of the website-->
       <a href="#" class="navbar-brand mb-0 h1">
-        <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+        <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
         PCVS
       </a>
       <!--admin's healthcare centre name is shown -->
@@ -47,7 +47,7 @@
         <ul class="navbar-nav">
           <!--scroll down to list of available vaccine (transition)-->
           <li class="nav-item">
-            <a href="viewVaccineBatchInfo.html" class="nav-link" role="button">
+            <a href="viewVaccineBatchInfo.php" class="nav-link" role="button">
               View Vaccine Batch Information
             </a>
           </li>
@@ -60,7 +60,7 @@
 
           <!--log out-->
           <li class="nav-item">
-            <a href="index.html" class="nav-link" role="button">
+            <a href="index.php" class="nav-link" role="button">
               Log Out
             </a>
           </li>
@@ -87,7 +87,7 @@
 
       <div class="col-md-6">
         <!--.img-fluid: make image responsive (max-width: 100%, height: auto)-->
-        <img src="img/vaccine.png" alt="patientClipArt" class="img-fluid">
+        <img src="../img/vaccine.png" alt="patientClipArt" class="img-fluid">
       </div>
     </div>
   </div>
@@ -179,7 +179,7 @@
           <div class="col-sm-6">
 
             <div class="footer-info">
-              <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+              <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
               <h3>PCVS</h3>
               <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
                 Vaccination System will help allowing the health ministry to keep
@@ -228,7 +228,7 @@
     crossorigin="anonymous"></script>
 
   <!--javascript-->
-  <script src="assets/javascript/main.js"></script>
+  <script src="../assets/javascript/main.js"></script>
 
   <script>
     //show healthcare centre name after admin logs in

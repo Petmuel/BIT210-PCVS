@@ -27,7 +27,7 @@
     <div class="container">
       <!--Put title and image of the website-->
       <a href="#" class="navbar-brand mb-0 h1">
-        <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+        <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
         PCVS
       </a>
        <!--admin's healthcare centre name is shown -->
@@ -48,7 +48,7 @@
         <ul class="navbar-nav">
           <!--scroll down to list of available vaccine (transition)-->
           <li class="nav-item">
-            <a href="recordNewVaccineBatch.html" class="nav-link" role="button">
+            <a href="recordNewVaccineBatch.php" class="nav-link" role="button">
               Record New Vaccine Batch
             </a>
           </li>
@@ -61,7 +61,7 @@
 
           <!--log out-->
           <li class="nav-item">
-            <a href="index.html" class="nav-link" role="button">
+            <a href="index.php" class="nav-link" role="button">
               Log Out
             </a>
           </li>
@@ -87,7 +87,7 @@
       </div>
       <div class="col-md-6">
         <!--.img-fluid: make image responsive (max-width: 100%, height: auto)-->
-        <img src="img/patient3.png" alt="patientClipArt" class="img-fluid">
+        <img src="../img/patient3.png" alt="patientClipArt" class="img-fluid">
       </div>
     </div>
   </div>
@@ -111,7 +111,7 @@
           </tr>
           
           <tr class="bg-white border-1" id="tr">
-            <td><a href="vaccinationList.html" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
+            <td><a href="vaccinationList.php" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
             <td class="p-3">BatchNo01</td>
             <td class="p-3">Pfizer</td>
             <td class="p-3">3</td>
@@ -122,7 +122,7 @@
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="vaccinationList.html" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
+            <td><a href="vaccinationList.php" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
             <td class="p-3">BatchNo02</td>
             <td class="p-3">Moderna</td>
             <td class="p-3">10</td>
@@ -133,7 +133,7 @@
           </tr>
 
           <tr class="bg-white border-1">
-            <td><a href="vaccinationList.html" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
+            <td><a href="vaccinationList.php" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
             <td class="p-3">BatchNo03</td>
             <td class="p-3">Astrazenaca</td>
             <td class="p-3">2</td>
@@ -157,7 +157,7 @@
           <div class="col-sm-6">
 
             <div class="footer-info">
-              <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+              <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
               <h3>PCVS</h3>
               <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
                 Vaccination System will help allowing the health ministry to keep
@@ -207,7 +207,7 @@
     crossorigin="anonymous"></script>
 
   <!--javascript-->
-  <script src="assets/javascript/main.js"></script>
+  <script src="../assets/javascript/main.js"></script>
 
   <script>
     //show healthcare centre name after admin logs in
