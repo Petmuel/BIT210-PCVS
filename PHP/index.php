@@ -24,7 +24,7 @@
       <div class="container">
         <!--Put title and image of the website-->
         <a href="login.html" class="navbar-brand mb-0 h1">
-          <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+          <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
           PCVS
         </a>
 
@@ -96,7 +96,7 @@
   
         <div class="col-md-6">
           <!--.img-fluid: make image responsive (max-width: 100%, height: auto)-->
-          <img src="img/vaccination3.png" alt="vaccinationClipArt" class="img-fluid">
+          <img src="../img/vaccination3.png" alt="vaccinationClipArt" class="img-fluid">
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@
         <div class="row p-2">
           <div class="col-md-6 text-center pb-4">
             <p class="fs-1 fst-italic">We care for your health!</p>
-            <img src="img/doctors.png" alt="doctors" class="img-fluid">
+            <img src="../img/doctors.png" alt="doctors" class="img-fluid">
           </div>
       
           <div class="col-md-6 formBg p-5">
@@ -145,7 +145,7 @@
             <div class="col-sm-6">
 
               <div class="footer-info">
-                <img src="img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
+                <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
                 <h3>PCVS</h3>
                 <p>There are many Covid-19 test centres that have been set up to manage Covid-19 testing. Private Covid
                   Vaccination System will help allowing the health ministry to keep
@@ -190,7 +190,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     
     <!--javascript-->
-    <script src="assets/javascript/main.js"></script>
+    <script src="../assets/javascript/main.js"></script>
 
     <!--testing only (need to remove later)-->
     <script>

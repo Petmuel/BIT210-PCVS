@@ -56,13 +56,13 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="signUp.html" class="nav-link">
+            <a href="signUp.php" class="nav-link">
               Sign Up As Patient
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="index.html" class="nav-link">
+            <a href="index.php" class="nav-link">
               Login
             </a>
           </li>
