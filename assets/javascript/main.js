@@ -187,14 +187,14 @@ function login(){
     for(var i=0; i< patients.length; i++){
         if(patients[i].username == inUsername && patients[i].password == inPassword){
             alert("Welcome, " + patients[i].username);           
-            window.location.replace("requestVaccinationAppointment.html");
+            window.location.replace("requestVaccinationAppointment.php");
         }
         else{
             for(var i=0; i< admins.length; i++){
                 if(admins[i].username == inUsername && admins[i].password == inPassword){
                     alert("Welcome, " + admins[i].username + " (HealthcareCentre name: " + admins[i].healthcareCentre.centreName + ")");
                     currentAdmin = admins[i];
-                    window.location.replace("recordNewVaccineBatch.html");
+                    window.location.replace("../recordNewVaccineBatch.php");
                 }
                 else{
                     alert("Your username or password is incorrect, please try again");

@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <!-- Stylesheet CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 
     <title>CPS-Vaccine</title>
   </head>
@@ -61,13 +61,13 @@
               <ul class="dropdown-menu"aria-labelledby="navbarDropdown">
               
                 <li>
-                  <a href="adminSignup.html" class="dropdown-item">
+                  <a href="adminSignup.php" class="dropdown-item">
                     Administrator
                   </a>
                 </li>
 
                 <li>
-                  <a href="signup.html" class="dropdown-item">
+                  <a href="signup.php" class="dropdown-item">
                     Patient
                   </a>
                 </li>
@@ -125,8 +125,8 @@
               <!-- sign up links-->
               <div class="mb-3">
                 <ul class="list-unstyled">
-                  Don't have any account? Sign up here as <a href="adminSignup.html">Administrator</a>
-                  <a href="signup.html">Patient</a>
+                  Don't have any account? Sign up here as <a href="adminSignup.php">Administrator</a>
+                  <a href="signup.php">Patient</a>
                 </ul>
               </div>
               
@@ -190,7 +190,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     
     <!--javascript-->
-    <script src="../assets/javascript/main.js"></script>
+    <script src="..\assets\javascript\main.js"></script>
 
     <!--testing only (need to remove later)-->
     <script>
