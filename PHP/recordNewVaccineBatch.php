@@ -1,3 +1,7 @@
+<?php
+    include_once 'actions/db.php';
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -30,8 +34,21 @@
         <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
         PCVS
       </a>
-      <!--admin's healthcare centre name is shown -->
-      <span id="callCentreName"></span>
+      <!--Current admin full name is shown after logging in-->
+      <text>
+        <?php
+          $uName = $_SESSION['user_name'];
+          $sql = "SELECT * FROM tb_admins WHERE username = '$uName';";
+          $result = mysqli_query($conn, $sql);
+
+          if (mysqli_num_rows($result) > 0) {
+              //while there is still have a row of admins retrieved from database
+              while($row = mysqli_fetch_assoc($result)) {
+                echo "Welcome, ".$row["fullName"];
+              }
+          }
+        ?>         
+      </text>
       <!--
           To toggle the navigation bar
           data-toggle: class that will be applying toggle to 
@@ -93,80 +110,78 @@
   </div>
 
   <!--Record new vaccine batch-->
-  <form id="rvbi">
-    <div class="py-5 px-3 text-center">
+  <form action="recordVc.php" method="GET">
+    <div class="pt-5 text-center">
       <!--list of available vaccines-->
-      <div class="container decorate shadow-lg py-3 px-4 rounded-3">
+      <div class="container decorate border-1 py-3 px-5 shadow-lg listBg">  
         <h3>List of Available Vaccines</h3>
         <h5>Select a Vaccine to Record New Batch</h5>
         <div class="row horizontalOverflow">
-          <table class="shadow-lg bg-white">
-            <tr class="shadow-sm">
+          <table class="bg-light">
+            <tr class="border-1">
               <th class="p-3">VaccineID</th>
               <th class="p-3">VaccineName</th>
-              <th class="p-3">Manufacturer</th>
+              <th class="p-3">Manufacturer</th>   
             </tr>
-
-            <tr class="shadow-sm">
-              <td class="px-3">
-                <div class="form-check">
-                  <label class="form-check-label" for="rad1">
-                    Vaccine01
-                   </label>
-                  <input class="form-check-input" type="radio" name="batch" id="rad1" value="Pfizer">
-                </div>
-              </td>
-              <td class="p-3">Pfizer</td>
-              <td class="p-3">Pfizer-BioNTech</td>
-            </tr>
-
-            <tr class="shadow-sm">
-              <td class="px-3">
-                <div class="form-check">
-                  <label class="form-check-label" for="rad2">
-                    Vaccine02
-                   </label>
-                  <input class="form-check-input" type="radio" name="batch" id="rad2" value="Astrazenaca">
-                </div>
-              </td>
-              <td class="p-3">Oxford-Astrazenaca</td>
-              <td class="p-3"></td>
-            </tr>
-
-            <tr class="shadow-sm">
-              <td class="px-3">
-                <div class="form-check">
-                  <label class="form-check-label" for="rad3">
-                    Vaccine03
-                   </label>
-                  <input class="form-check-input" type="radio" name="batch" id="rad3" value="Sinovac">
-                </div>
-              </td>
-              <td class="p-3">Moderna</td>
-              <td class="p-3">Moderna</td>
-            </tr>
+            <?php
+                $sql = "Select * from tb_vaccines;";
+                $result = mysqli_query($conn, $sql);
+                
+                //if there are rows retrieved from database
+                if(mysqli_num_rows($result)>0){     
+                    //while there is still have a row of vaccines retrieved from database
+                    while($row = mysqli_fetch_assoc($result)){
+            ?>
+                <!--display list of vaccines which are retrieved from database-->
+                <tr class="border-1">
+                  <td class="px-3">
+                    <div class="form-check">  
+                      <!--to store vaccineID in value of input radio type-->
+                      <input class="form-check-input" type="radio" name="vac" value="<?php echo $row["vaccineID"];?>" required>
+                      <label class="form-check-label" for="vac">   
+                          <!--display vaccineID-->
+                          <?php echo $row["vaccineID"];?>
+                      </label>
+                    </div>
+                  </td>
+                  <td class="p-3"><?php echo $row["vaccineName"];?></td>
+                  <td class="p-3"><?php echo $row["manufacturer"];?></td>
+                </tr>
+            <?php
+                    } //end of while loop
+                }  
+            ?>
           </table>
         </div>
-      
-        <h4>Record new vaccine batch</h3>
-        <div class="row">
-          <div class="col-lg-4 py-2">
-            <label for="batchNo">Batch Number</label>
-            <input type="text" id="batchNo" name="batchNo">
-          </div> 
+    
+            
+        <div class="row py-5">
+          <h4>Record new vaccine batch</h3>
 
-          <div class="col-lg-4 py-2">
+          <div class="col-lg-6 py-3">
             <label for="exDate">Expiry Date</label>
-              <input type="date" id="exDate" name="exDate">
+            <input type="date" id="mDate" name="exDate" required>
           </div> 
 
-          <div class="col-lg-4">
+          <div class="col-lg-6 py-3">
             <label for="quantityAv">Quantity of dose available</label>
             <input type="number" id="quantityAv" name="quantityAv" min="1" max="10000" required>
           </div>
         </div>
-        <br>
-        <input type="button" class="btn btn-primary" value="Record" onclick="recordVaccineBatch()">
+        <button type="submit" name="submit" class="btn btn-primary">Record</button>
+        <!--display message which stated that admin has successfully recorded new vaccine batch
+            declared in recordVc.php-->
+        
+        <?php
+            if(isset($_GET['message'])){ 
+                $message = $_GET['message'];
+        ?>
+        <p class="alert alert-success" id="msg">
+            <?php echo $message; ?>
+        </P>
+        <?php
+            }
+        ?>
       </div>
     </div>
   </form>
@@ -177,7 +192,6 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-sm-6">
-
             <div class="footer-info">
               <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
               <h3>PCVS</h3>
@@ -187,13 +201,9 @@
                 centres.
               </p>
             </div>
-
-
           </div>
 
           <div class="col-sm-6">
-
-
             <h4>Contact Us</h4>
             <p>
               <strong>Address : </strong>No. 15, Jalan Sri Semantan 1, Off, Jalan Semantan<br>
@@ -202,17 +212,9 @@
               <strong>Phone : </strong>012-123-4567<br>
               <strong>Email : </strong>PCVS@gmail.com<br>
             </p>
-
-
           </div>
-
         </div>
-
       </div>
-
-    </div>
-
-    </div>
     </div>
 
     <div class="container">
@@ -228,12 +230,32 @@
     crossorigin="anonymous"></script>
 
   <!--javascript-->
-  <script src="../assets/javascript/main.js"></script>
-
+  <!--display the message for short period of time by using javascript-->
   <script>
-    //show healthcare centre name after admin logs in
-    document.getElementById('callCentreName').innerHTML = "Healthcare Centre: " + currentAdmin.healthcareCentre.centreName;
+    setTimeout(function(){
+        document.getElementById('msg').style.display = 'none';
+    }, 2500);
+
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() +1;
+    var year = date.getUTCFullYear();
+    //if day, month or year is less than 10, add 0 to its left side to make it 2 digits
+    if (day<10){
+        day = '0' + day;
+    }
+    if (month<10){
+        month = '0' + month;
+    }
+    if (year<10){
+        year = '0' + year;
+    }
+    var minDate = year + "-" + month + "-" + day;
+    document.getElementById('mDate').setAttribute("value", minDate);
+    document.getElementById('mDate').setAttribute("min", minDate);
+    console.log(minDate);
   </script>
+
   
 </body>
 
