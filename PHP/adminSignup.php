@@ -1,3 +1,6 @@
+<?php
+    include_once 'actions/db.php';
+?>
 <!doctype html>
 <html lang="en">
 
@@ -83,76 +86,58 @@
     </div>
   </nav>
 
-
-
   <br><br><br>
 
-
-
-
-  <form style="border:1px solid #ccc">
+  <form method="POST" class="form py-5"  action="actions/signupcheck_admin.php">   
     <div class="container">
-
       <h1>Adminstrator's Sign Up</h1>
       <hr>
-      <br><br>
+      <p>Select a Healthcare Centre</p>    
+      <select name="centre" required>
+        <?php
+          $sql = "Select * from tb_healthcarecentres;";
+          $result = mysqli_query($conn, $sql);
+          
+          //if there are rows retrieved from database
+          if(mysqli_num_rows($result)>0){
+            //while there is still have a row of healthcare centres retrieved from database
+            while($row = mysqli_fetch_assoc($result)){
+        ?>
 
-
-
-      <label for="healthcare">Healthcare Centers:</label>
-      <select name="healthcare" id="healthcare">
-        <option value="University Kebangsaan" id="centre">University Kebangsaan</option>
-        <option value="IDCC Shah alam">IDCC Shah alam</option>
-        <option value="Bukit Jalil Stadium">Bukit Jalil Stadium</option>
-        <option value="KLCC 1 & 2">KLCC 1 & 2</option>
-
+        <!--display healthcare centres which are retrieved from database-->
+        <option><?php echo $row["centreName"];?></option>      
+        <?php
+              } //end of while loop
+          }  
+        ?>
       </select>
-
-      <br><br><br>
-
-
-
-      <div class="row">
-        <div class="col">
-          <label for="username"><b>Username</b></label>
-          <input class="input" type="text" placeholder="Enter Username" name="username" id="aUsername">
-        </div>
-
+      <div class="form-group mt-3">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" placeholder="Enter username" required>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <label for="psw"><b>Password</b></label>
-          <input class="input" type="password" placeholder="Enter Password" name="psw" id="aPsw">
-        </div>
+      <div class="form-group mt-3">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Enter password" required>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <label for="fullname"><b>Full name</b></label>
-          <input class="input" type="text" placeholder="Enter Fullname" name="Fullname" id="aFName">
-        </div>
+      <div class="form-group mt-3">
+        <label for="name">Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
       </div>
 
+      <div class="form-group mt-3">
+        <label for="full name">Full Name</label>
+        <input type="text" name="fullname" class="form-control" placeholder="Enter fullname" required>
+      </div>
 
-        <div class="row">
-          <div class="col">
-            <label for="email"><b>Email</b></label>
-            <input class="input" type="text" placeholder="Enter Email" name="email" id="aEmail">
-          </div>
-        </div>
+      <div class="form-group mt-3">
+        <label for="full name">StaffID</label>
+        <input type="text" name="staffID" class="form-control" placeholder="Enter staffID" required>
+      </div>
 
-
-        <div class="row">
-          <div class="col">
-            <label for="staffID"><b>Staff ID</b></label>
-            <input class="input" type="text" placeholder="Enter your staff ID" name="staffID" id="inStaffID">
-          </div>
-        </div>
-
-        <input type="button" class="btn-lg btn-primary" value="Sign Up" onclick="adminSignUp()">
-
-    </div>
+      <button type="submit" class="btn btn-danger mt-4" name="submit">Sign up</button>
+    </div>  
   </form>
 
 

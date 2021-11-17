@@ -1,6 +1,9 @@
 <?php
     include_once 'actions/db.php';
+<<<<<<< Updated upstream
     session_start();
+=======
+>>>>>>> Stashed changes
 ?>
 <!doctype html>
 <html lang="en">
@@ -92,53 +95,41 @@
   </nav>
   <br><br><br>
     
-    <form style="border:1px solid #ccc">
-      <div class="container">
-      
-        <h1 class="py-4">Patient Sign Up</h1>
-
-        <div class="row">
-            <div class="col">
-                <label for="username" ><b>Username</b></label>
-                <input class="input" id="username" type="text" placeholder="Enter your Username" name="username" required> 
-            </div>
-          
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label for="psw"><b>Password</b></label>
-                <input class="input" id="psw" type="password" placeholder="Enter your Password" name="psw" required>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label for="fullname" ><b>Full name</b></label>
-                <input class="input" id="fullname" type="text" placeholder="Enter your Full Name" name="fullname" required> 
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label for="email"><b>Email</b></label>
-                <input class="input" id="email" type="email" placeholder="Enter your Email" name="email" required> 
-            </div>
-        </div>
-          
-
-        <div class="row">
-            <div class="col">
-                <label for="Passport/IC"><b>Passport / IC</b></label>
-                <input class="input" id="Passport/IC" type="number" placeholder="Enter your Passport / IC" name="Passport/IC" required>
-            </div>
-        </div>
-        
-        <input type="button" class="btn btn-primary" value="Sign Up" onclick="patientSignUp()">
-         
-        
+  <form method="post" class="form py-5" name="signup"  action="actions/signupcheck.php">
+    <div class="container">
+      <h2>Patient Sign up</h2>
+      <div class="form-group mt-3">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" id="username" aria-describedby="username"
+          placeholder="Enter username">
       </div>
-    </form>
+
+      <div class="form-group mt-3">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="name">email</label>
+        <input type="text" name="email" class="form-control" id="email" aria-describedby="email"
+          placeholder="Enter email">
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="phone">fullName</label>
+        <input type="phone" name="fullName" class="form-control" id="fullName" aria-describedby="fullName"
+          placeholder="Enter fullName">
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="ICPassport">ICPassport</label>
+        <input type="text" name="ICPassport" class="form-control" id="ICPassport" aria-describedby="ICPassport"
+          placeholder="Enter ICPassport">
+      </div>
+
+      <input type="submit" value="Sign Up" class="btn btn-danger mt-4">
+    </div>
+  </form>
 
 
   <!-- ======= Footer ======= -->

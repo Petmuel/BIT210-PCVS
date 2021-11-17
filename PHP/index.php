@@ -110,27 +110,27 @@
           </div>
       
           <div class="col-md-6 formBg p-5">
-            <form>
-              <h3>Login</h3>
-              <p class="text-black-50">Please fill in details</p>
-              <div class="mb-3">
-                <label for="inUsername" class="form-label">Username</label>
-                <input type="text" class="form-control" name="inUsername" id="inUsername">
+            <form method="POST" class="form" action="actions/AdminLoginCheck.php">
+              <div class="form-group mt-3">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" id="username" aria-describedby="username" 
+                placeholder="Enter username" required>
               </div>
-              <div class="mb-3">
-                <label for="inPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" name="inPassword" id="inPassword">
+
+              <div class="form-group mt-4">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" required>
               </div>
-    
+
               <!-- sign up links-->
-              <div class="mb-3">
+              <div class="mb-3 mt-3">
                 <ul class="list-unstyled">
                   Don't have any account? Sign up here as <a href="adminSignup.php">Administrator</a>
                   <a href="signup.php">Patient</a>
                 </ul>
               </div>
               
-              <input type="button" class="btn btn-primary" value="Login" onclick="login()">
+              <input type="submit" class="btn btn-primary" value="Login">
             </form>
           </div>
         </div>
