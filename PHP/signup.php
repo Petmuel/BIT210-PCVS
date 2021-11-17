@@ -1,9 +1,6 @@
 <?php
     include_once 'actions/db.php';
-<<<<<<< Updated upstream
     session_start();
-=======
->>>>>>> Stashed changes
 ?>
 <!doctype html>
 <html lang="en">
