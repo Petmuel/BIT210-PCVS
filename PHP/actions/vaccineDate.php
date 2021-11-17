@@ -1,7 +1,7 @@
 <?php
 session_start();
 //check if the admin has clicked the 'Record' button or not
-if (isset($_GET['submit'])){
+if (isset($_GET['View Batches'])){
     //then include the database connection
     include_once 'db.php';
 //get data from the record vaccine batch form
