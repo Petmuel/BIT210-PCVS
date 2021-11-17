@@ -1,4 +1,8 @@
-<!doctype html>
+
+<?php
+    include_once 'actions/db.php';
+    session_start();
+?><!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
