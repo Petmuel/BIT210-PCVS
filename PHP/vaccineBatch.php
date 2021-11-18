@@ -1,4 +1,9 @@
+<?php
+  echo 'test';
+  die();
 
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
