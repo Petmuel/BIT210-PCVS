@@ -156,7 +156,7 @@
                     
                     
                 </select></td>
-                      <td><br><button onclick="document.location='vaccineBatch.php'">View Batches</button></td>
+                      <td><br><button onclick="document.location='vaccineBatch.php?type=Moderna'">View Batches</button></td>
                     </tr>
                     
                   </tbody>

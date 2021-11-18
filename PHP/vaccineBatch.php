@@ -1,8 +1,16 @@
 <?php
-  echo 'test';
-  die();
-
-
+  include_once 'actions/db.php';
+  $id = 0;
+  
+  $type = isset($_GET['type']) && !empty($_GET['type']) ? $_GET['type'] : '';
+  $date = isset($_GET['date']) && !empty($_GET['date']) ? $_GET['date'] : '';
+  
+  if($type){
+    $query = "INSERT INTO `tb_vaccinations`(`status`, `appointmentDate`) VALUE ('pending', '$date');";
+    $result = mysqli_query($conn, $query);
+    $id = $conn->insert_id;
+  }
+  $idText = $id > 0 ? "?id=$id" : "";
 ?>
 <!doctype html>
 <html lang="en">
@@ -174,7 +182,7 @@
                       <td><br><input type="date" name="date" min="2021-10-19" max="2021-12-31"></td>
                       
                     
-                      <td><br><button onclick="document.location='VaccineStatus.php'">Appointment</button></td>
+                      <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
                     </tr>
 
 
@@ -186,7 +194,7 @@
                       
 
 
-                      <td><br><button onclick="document.location='VaccineStatus.php'">Appointment</button></td>
+                      <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
                     </tr>
 
 
@@ -198,7 +206,7 @@
                       <td><br><input type="date" name="date" min="2021-10-19" max="2021-12-31"></td>
                       
 
-                      <td><br><button onclick="document.location='VaccineStatus.php'">Appointment</button></td>
+                      <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
                     </tr>
 
 
@@ -209,7 +217,7 @@
                       <td><br>30,000</td>
                       <td><br><input type="date" name="date" min="2021-10-19" max="2021-12-31"></td>
                       
-                      <td><br><button id="generate" onclick="document.location='VaccineStatus.php'">Appointment</button></td>
+                      <td><br><button id="generate" onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
                     </tr>
                   
                   </tbody>

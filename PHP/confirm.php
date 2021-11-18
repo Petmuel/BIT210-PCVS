@@ -1,6 +1,27 @@
 <?php
     include_once 'actions/db.php';
     session_start();
+  if(count($_POST)){
+    $id = isset($_POST['Healthcare']) ? $_POST['Healthcare'] : '';
+    if(isset($_POST['btnConfirm'])){
+      $queryUpdate = "UPDATE `tb_vaccinations` SET `status` = 'confirm' WHERE `vaccinationID` = '$id'";
+      $result = mysqli_query($conn, $queryUpdate);
+    }
+    elseif(isset($_POST['btnReject'])){
+      $queryUpdate = "UPDATE `tb_vaccinations` SET `status` = 'reject' WHERE `vaccinationID` = '$id'";
+      $result = mysqli_query($conn, $queryUpdate);
+    }
+    elseif(isset($_POST['type']) && $_POST['type'] == 'ajax'){
+        die('test');
+    }
+  }
+
+
+  //$queryCOUNT = "SELECT COUNT(*) FROM `tb_vaccinations` WHERE `status` = 'pending'";
+
+
+  $query = "SELECT * FROM `tb_vaccinations` WHERE `status` = 'pending'";
+  $result = mysqli_query($conn, $query);
 ?>
 <!doctype html>
 <html lang="en">
@@ -67,9 +88,9 @@ text-align: center;
 
       
     </style>
-
+  <script type="text/javascript" src="js/jqmin.js"></script>
     <script>
-
+/*
      function showMessageAcc() {
         alert("The status is set to 'confirmed'.");
      }
@@ -116,7 +137,22 @@ text-align: center;
                           }
                         }
                       } 
-
+                      */
+$(document).ready(function(){
+  $('#Healthcare').change(function()
+    {
+        var id = $(this).val();
+        $('#HCAddress').val(id);
+        /*$.ajax({
+          url: 'confirm.php',
+          type: 'POST',
+          data: {id : id, type: 'ajax'},
+          success: function(result){
+            alert(result);
+          }
+        });*/
+    });
+});
 
     </script>
     
@@ -187,7 +223,7 @@ text-align: center;
     <br><br>
     <br><br>
 
-
+<form action="" method="POST">
     <section class="ftco-section" id="body">
         <div class="container1">
           <div style="overflow-x:auto;">
@@ -215,33 +251,35 @@ text-align: center;
                   
                   <tbody>
                     <tr>
-                      
-                      <td><br><select id="Healthcare" onchange="ChangeHealthList()">
-                        <option value="">-- Vaccine ID --</option>
-                    <option value="44417633" id="44417633">44417633</option>
-                    <option value="24554357" id="24554357">24554357</option>
-                    <option value="63731625" id="63731625">63731625</option>
-                    <option value="74757799" id="74757799">74757799</option>`
-                    <option value="35602718" id="35602718">35602718</option>
+                      <td>
+                      <select id="Healthcare" name="Healthcare">
+                      <option value="">-- Vaccine ID --</option>
+                      <?php
+                        while ($row = $result->fetch_assoc())
+                        {
+                          echo '<option value="'.$row['vaccinationID'].'">'.$row['vaccinationID'].'</option>';
+                        }
+                      ?>
             </select> </td>
                       
                       <td><br>
                         <select id="HCAddress">
                 
                             <option value="">-- Information --</option>
-            
+                            <?php
+                              $result = mysqli_query($conn, $query);
+                              while ($row = $result->fetch_assoc())
+                              {
+                                echo '<option value="'.$row['vaccinationID'].'">'.$row['status'].' - '.$row['appointmentDate'].' - '.$row['remarks'].'</option>';
+                              }
+                            ?>
                         </select></td>
 
 
 
 
-                    <td ><br><button id="Confbutton" onclick="showMessageAcc()">Confirm</button></td>
-
-                    <td ><br><button id="Rejbutton" onclick="showMessageRej()">Reject</button></td>
-
-                      
-                    
-                    
+                    <td ><br><button type="submit" id="" name="btnConfirm" onclick="return confirm('Are you sure to confirm? The quantity will be changed to '999,999'')">Confirm</button></td>
+                    <td ><br><button type="submit" id="" name="btnReject" onclick="return confirm('Are you sure to reject?')">Reject</button></td> 
                 </select></td>
                      
                   </tbody>
@@ -278,7 +316,7 @@ text-align: center;
         
         
       </section>
-
+                      </form>
       
 
       <br><br>
