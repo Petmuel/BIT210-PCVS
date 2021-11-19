@@ -92,6 +92,7 @@
 
     <form action="vaccineBatch.php" method="GET">
     <input type="hidden" name="type" value="AstraZeneca" /> 
+    <input type="hidden" name="vaccineID" value="3" />
     <section class="ftco-section" id="body">
         <div class="container1">
           <div style="overflow-x:auto;">

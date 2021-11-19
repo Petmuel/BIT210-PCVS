@@ -3,10 +3,11 @@
   $id = 0;
   
   $type = isset($_GET['type']) && !empty($_GET['type']) ? $_GET['type'] : '';
+  $vaccineID = isset($_GET['vaccineID']) && !empty($_GET['vaccineID']) ? $_GET['vaccineID'] : '';
   $date = isset($_GET['date']) && !empty($_GET['date']) ? $_GET['date'] : '';
   
   if($type){
-    $query = "INSERT INTO `tb_vaccinations`(`status`, `appointmentDate`) VALUE ('pending', '$date');";
+    $query = "INSERT INTO `tb_vaccinations`(`status`, `appointmentDate`, `vaccineID`) VALUE ('pending', '$date', '$vaccineID');";
     $result = mysqli_query($conn, $query);
     $id = $conn->insert_id;
   }
@@ -187,7 +188,7 @@
                     <tr>
                       <th scope="row" class="scope" ><br>BatchNo2</th>
                       <td><br>01/02/2022</td>
-                      <td><br>500,000</td>
+                      <td><br>1,000,000</td>
                       
 
 
@@ -199,7 +200,7 @@
                     <tr>
                       <th scope="row" class="scope" ><br>BatchNo3</th>
                       <td><br>01/12/2021</td>
-                      <td><br>100,000</td>
+                      <td><br>1,000,000</td>
                       
 
                       <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
@@ -210,7 +211,7 @@
                     <tr>
                       <th scope="row" class="scope" ><br>BatchNo4</th>
                       <td><br>10/03/2022</td>
-                      <td><br>30,000</td>
+                      <td><br>1,000,000</td>
                       
                       <td><br><button id="generate" onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
                     </tr>

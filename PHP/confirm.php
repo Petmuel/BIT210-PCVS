@@ -12,7 +12,15 @@
       $result = mysqli_query($conn, $queryUpdate);
     }
     elseif(isset($_POST['type']) && $_POST['type'] == 'ajax'){
-        die('test');
+        $id = isset($_POST['id']) ? $_POST['id'] : 0;
+        $queryAjax = "SELECT `vaccinationID`, `v1`.`vaccineID`, `appointmentDate`, `vaccineName`, `manufacturer`, `status`
+                      FROM `tb_vaccinations` as `v1`
+                      INNER JOIN `tb_vaccines` as `v2` ON `v1`.`vaccineID` = `v2`.`vaccineID`
+                      WHERE `vaccinationID` = '$id'";
+        $resultAjax = mysqli_query($conn, $queryAjax);
+        $rowAjax = mysqli_fetch_assoc($resultAjax);
+        $output = implode(' - ' , $rowAjax);
+        die($output);
     }
   }
 
@@ -88,7 +96,7 @@ text-align: center;
 
       
     </style>
-  <script type="text/javascript" src="js/jqmin.js"></script>
+  <!--<script type="text/javascript" src="js/jqmin.js"></script>-->
     <script>
 /*
      function showMessageAcc() {
@@ -141,21 +149,7 @@ text-align: center;
                         }
                       } 
                       */
-$(document).ready(function(){
-  $('#Healthcare').change(function()
-    {
-        var id = $(this).val();
-        $('#HCAddress').val(id);
-        /*$.ajax({
-          url: 'confirm.php',
-          type: 'POST',
-          data: {id : id, type: 'ajax'},
-          success: function(result){
-            alert(result);
-          }
-        });*/
-    });
-});
+
 
     </script>
     
@@ -265,18 +259,21 @@ $(document).ready(function(){
                       ?>
             </select> </td>
                       
-                      <td><br>
-                        <select id="HCAddress">
+                      <td>
+                        <br>
+                        <div id="HCAddress"></div>
+                        <!--<select id="HCAddress">
                 
                             <option value="">-- Information --</option>
                             <?php
-                              $result = mysqli_query($conn, $query);
-                              while ($row = $result->fetch_assoc())
-                              {
-                                echo '<option value="'.$row['vaccinationID'].'">'.$row['status'].' - '.$row['appointmentDate'].' - '.$row['remarks'].'</option>';
-                              }
+                              //$result = mysqli_query($conn, $query);
+                              //while ($row = $result->fetch_assoc())
+                              //{
+                              //  echo '<option value="'.$row['vaccinationID'].'">'.$row['status'].' - '.$row['appointmentDate'].' - '.$row['remarks'].'</option>';
+                              //}
                             ?>
-                        </select></td>
+                        </select>-->
+                      </td>
 
 
 
@@ -400,14 +397,30 @@ $(document).ready(function(){
 
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>-->
      
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jqmin.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#Healthcare').change(function()
+          {
+              var id = $(this).val();
+              $('#HCAddress').val(id);
+              $.ajax({
+                url: 'confirm.php',
+                type: 'POST',
+                data: {id : id, type: 'ajax'},
+                success: function(result){
+                    $('#HCAddress').html(result);
+                }
+              });
+          });
+      });
+    </script>
   </body>
 </html>
