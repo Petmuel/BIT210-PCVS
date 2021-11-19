@@ -111,6 +111,7 @@
                       <th>Vaccine</th>
                       <th>Healthcare Center</th>
                       <th>Address</th>
+                      <th>Upcoming Date</th>
                       <th>View Batches of Vaccine</th>
                     </tr>
                   </thead>
@@ -161,7 +162,7 @@
                     
                     
                 </select></td>
-                <td><input type="date" name="date" /></td>
+                <td><br><input type="date" name="date" /></td>
                       <td><br><button type="submit" value="submit">View Batches</button></td>
                     </tr>
                     

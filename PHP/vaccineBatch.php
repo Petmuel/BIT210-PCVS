@@ -168,7 +168,6 @@
                       <th>Batch</th>
                       <th>Expiry Date</th>
                       <th>Available Quantity</th>
-                      <th>Upcoming Date</th>
                       <th>Request Appointment </th>
                       
                     </tr>
@@ -179,7 +178,6 @@
                       <th scope="row" class="scope" ><br>BatchNo1</th>
                       <td><br>12/04/2022</td>
                       <td><br>1,000,000</td>
-                      <td><br><input type="date" name="date" min="2021-10-19" max="2021-12-31"></td>
                       
                     
                       <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
@@ -190,7 +188,6 @@
                       <th scope="row" class="scope" ><br>BatchNo2</th>
                       <td><br>01/02/2022</td>
                       <td><br>500,000</td>
-                      <td><br><input type="date" name="date" min="2021-10-19" max="2021-12-31"></td>
                       
 
 
@@ -203,7 +200,6 @@
                       <th scope="row" class="scope" ><br>BatchNo3</th>
                       <td><br>01/12/2021</td>
                       <td><br>100,000</td>
-                      <td><br><input type="date" name="date" min="2021-10-19" max="2021-12-31"></td>
                       
 
                       <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
@@ -215,7 +211,6 @@
                       <th scope="row" class="scope" ><br>BatchNo4</th>
                       <td><br>10/03/2022</td>
                       <td><br>30,000</td>
-                      <td><br><input type="date" name="date" min="2021-10-19" max="2021-12-31"></td>
                       
                       <td><br><button id="generate" onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
                     </tr>

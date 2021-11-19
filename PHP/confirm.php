@@ -101,10 +101,13 @@ text-align: center;
         alert("The status is set to 'rejected'.");
      }
 
+     */
+
 
      function showMessageAdmin() {
         alert("The vaccination status is set to ‘administered’ , The quantity changed to '999,999'");
      } 
+     /*
 
 
 
@@ -251,10 +254,10 @@ $(document).ready(function(){
                   
                   <tbody>
                     <tr>
-                      <td>
+                      <td><br>
                       <select id="Healthcare" name="Healthcare">
-                      <option value="">-- Vaccine ID --</option>
-                      <?php
+                      <option value="">-- Vaccine ID -- </option>
+                      <?php 
                         while ($row = $result->fetch_assoc())
                         {
                           echo '<option value="'.$row['vaccinationID'].'">'.$row['vaccinationID'].'</option>';
@@ -278,8 +281,8 @@ $(document).ready(function(){
 
 
 
-                    <td ><br><button type="submit" id="" name="btnConfirm" onclick="return confirm('Are you sure to confirm? The quantity will be changed to '999,999'')">Confirm</button></td>
-                    <td ><br><button type="submit" id="" name="btnReject" onclick="return confirm('Are you sure to reject?')">Reject</button></td> 
+                    <td ><br><button type="submit" id="Confbutton" name="btnConfirm" onclick="return confirm('Are you sure to confirm? ')">Confirm</button></td>
+                    <td ><br><button type="submit" id="Rejbutton" name="btnReject" onclick="return confirm('Are you sure to reject?')">Reject</button></td> 
                 </select></td>
                      
                   </tbody>

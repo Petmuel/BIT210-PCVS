@@ -90,7 +90,8 @@
     <br><br>
     <br><br>
 
-
+    <form action="vaccineBatch.php" method="GET">
+    <input type="hidden" name="type" value="Johnson" />  
     <section class="ftco-section" id="body">
         <div class="container1">
           <div style="overflow-x:auto;">
@@ -158,7 +159,8 @@
                     
                     
                 </select></td>
-                      <td><br><button onclick="document.location='vaccineBatch.php?type=Johnson'">View Batches</button></td>
+                <td><br><input type="date" name="date" /></td>
+                      <td><br><button type="submit" value="submit">View Batches</button></td>
                     </tr>
                     
                   </tbody>
@@ -169,6 +171,7 @@
           </div>
         </div>
       </section>
+                    </form>
       <br><br>
 
       <hr>
