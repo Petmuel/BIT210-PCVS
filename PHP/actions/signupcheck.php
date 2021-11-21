@@ -29,11 +29,6 @@ $result = mysqli_query($conn,$query);
     echo "<script>alert('sign up failed');</script>";
   }
 }
-
-
-
-
-
 // Close DB connection
 $con->close();
 

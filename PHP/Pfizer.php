@@ -123,10 +123,10 @@
                       
                       <td><br><select id="Healthcare" name="Healthcare" onchange="ChangeHealthList()">
                         <option value="">-- Healthcare Center --</option> 
-                        <option value="UK">University Kebangsaan</option> 
-                        <option value="IDCC">IDCC Shah alam</option> 
-                        <option value="BJ">Bukit Jalil Stadium</option> 
-                        <option value="KLCC">KLCC 1 & 2</option> 
+                        <option value="University Kebangsaan">University Kebangsaan</option> 
+                        <option value="IDCC Shah alam">IDCC Shah alam</option> 
+                        <option value="Bukit Jalil Stadium">Bukit Jalil Stadium</option> 
+                        <option value="KLCC 1 & 2">KLCC 1 & 2</option> 
                       </select> </td>
                       
                       <td><br>
@@ -137,10 +137,10 @@
                       
                       <script>
                       var Address = {};
-                      Address['UK'] = ['43600 UKM, 43600 Bangi, Selangor, Malaysia'];
-                      Address['IDCC'] = ['Corporate Tower, Level 5, Jalan Pahat L 15/L, Section 15, 40200 Shah Alam'];
-                      Address['BJ'] = ['Jalan Barat, Bukit Jalil, 57000 Kuala Lumpur'];
-                      Address['KLCC'] = ['Jalan Pinang, Kuala Lumpur City Centre, 50088 Kuala Lumpur'];
+                      Address['University Kebangsaan'] = ['43600 UKM, 43600 Bangi, Selangor, Malaysia'];
+                      Address['IDCC Shah alam'] = ['Corporate Tower, Level 5, Jalan Pahat L 15/L, Section 15, 40200 Shah Alam'];
+                      Address['Bukit Jalil Stadium'] = ['Jalan Barat, Bukit Jalil, 57000 Kuala Lumpur'];
+                      Address['KLCC 1 & 2'] = ['Jalan Pinang, Kuala Lumpur City Centre, 50088 Kuala Lumpur'];
                       
                       function ChangeHealthList() {
                         var HealthList = document.getElementById("Healthcare");
@@ -163,8 +163,8 @@
                     
                     
                 </select></td>
-                <td><br><input type="date" name="date" /></td>
-                      <td><br><button type="submit" value="submit">View Batches</button></td>
+                <td><br><input type="date" name="date"/></td>
+                      <td><br><button type="submit" value="submit" name="submit">View Batches</button></td>
                     </tr>
                     
                   </tbody>
@@ -176,7 +176,7 @@
         </div>
       </section>
 
-                    </form>
+      </form>
       <br><br>
 
       <hr>

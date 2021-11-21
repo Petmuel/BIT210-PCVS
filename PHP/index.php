@@ -110,7 +110,7 @@
           </div>
       
           <div class="col-md-6 formBg p-5">
-            <form method="POST" class="form" action="actions/AdminLoginCheck.php">
+            <form method="POST" class="form" action="actions/loginCheck.php">
               <div class="form-group mt-3">
                 <label for="username">Username</label>
                 <input type="text" name="username" class="form-control" id="username" aria-describedby="username" 

@@ -41,12 +41,9 @@
           $sql = "SELECT * FROM tb_admins WHERE username = '$uName';";
           $result = mysqli_query($conn, $sql);
 
-          if (mysqli_num_rows($result) > 0) {
-              //while there is still have a row of admins retrieved from database
-              while($row = mysqli_fetch_assoc($result)) {
-                echo "Welcome, ".$row["fullName"];
-              }
-          }
+          $row = mysqli_fetch_assoc($result);
+          $centre = $row['centre'];
+          echo "Healthcare Centre: ".$centre;
         ?>         
       </text>
       <!--
@@ -110,7 +107,7 @@
   </div>
 
   <!--Record new vaccine batch-->
-  <form action="recordVc.php" method="GET">
+  <form action="actions/recordVc.php" method="GET">
     <div class="pt-5 text-center">
       <!--list of available vaccines-->
       <div class="container decorate border-1 py-3 px-5 shadow-lg listBg">  
@@ -157,13 +154,16 @@
             
         <div class="row py-5">
           <h4>Record new vaccine batch</h3>
-
-          <div class="col-lg-6 py-3">
+          <div class="col-lg-4 py-3"> 
+            <label for="batchNo">Batch Number</label>
+            <input type="text" id="batchNo" name="batchNo">
+          </div>
+          <div class="col-lg-4 py-3">
             <label for="exDate">Expiry Date</label>
             <input type="date" id="mDate" name="exDate" required>
           </div> 
 
-          <div class="col-lg-6 py-3">
+          <div class="col-lg-4 py-3">
             <label for="quantityAv">Quantity of dose available</label>
             <input type="number" id="quantityAv" name="quantityAv" min="1" max="10000" required>
           </div>

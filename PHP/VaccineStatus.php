@@ -1,8 +1,7 @@
 <?php
     include_once 'actions/db.php';
     session_start();
-
-    $id = isset($_GET['id']) & is_numeric($_GET['id']) ? $_GET['id'] : 0;
+    
 ?>
 <!doctype html>
 <html lang="en">
@@ -66,7 +65,7 @@
            btn.addEventListener( "click", function() {
                var generator = new IDGenerator();
                //output.innerHTML = generator.generate();
-               output.innerHTML = "<?php echo $id; ?>"
+               output.innerHTML = "<?php $id = $_SESSION['vaccinationID']; echo $id; ?>"
            }, false); 
             
         });

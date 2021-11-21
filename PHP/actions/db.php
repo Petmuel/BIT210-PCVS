@@ -5,7 +5,7 @@
     $dbUSername="root";
     //since database has no password, just put empty string lah
     $dbPassword="";
-    //name of the created database (cpsvaccine)
+    //name of the created database (pcvs_db)
     $dbName="pcvs_db";
 
     //The selected database has been retrieved to this variable $conn to store or retrieve data(easier way)

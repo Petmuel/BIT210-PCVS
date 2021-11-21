@@ -103,7 +103,6 @@
             //while there is still have a row of healthcare centres retrieved from database
             while($row = mysqli_fetch_assoc($result)){
         ?>
-
         <!--display healthcare centres which are retrieved from database-->
         <option><?php echo $row["centreName"];?></option>      
         <?php
