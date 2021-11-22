@@ -6,7 +6,7 @@
     if (isset($_GET['submit'])){
         
         //get BatchNo from current batch
-        $batchNo = $_GET['bNo'];                     
+        $batchNo = $_GET['bNo'];                      
         //Check existing user
         $sql ="SELECT * FROM tb_batches WHERE batchNo='$batchNo';" ;
         $result = mysqli_query($conn,$sql);

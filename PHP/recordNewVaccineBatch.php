@@ -123,7 +123,6 @@
             <?php
                 $sql = "Select * from tb_vaccines;";
                 $result = mysqli_query($conn, $sql);
-                
                 //if there are rows retrieved from database
                 if(mysqli_num_rows($result)>0){     
                     //while there is still have a row of vaccines retrieved from database
@@ -150,14 +149,13 @@
             ?>
           </table>
         </div>
-    
-            
         <div class="row py-5">
           <h4>Record new vaccine batch</h3>
           <div class="col-lg-4 py-3"> 
             <label for="batchNo">Batch Number</label>
             <input type="text" id="batchNo" name="batchNo">
           </div>
+
           <div class="col-lg-4 py-3">
             <label for="exDate">Expiry Date</label>
             <input type="date" id="mDate" name="exDate" required>
@@ -171,7 +169,6 @@
         <button type="submit" name="submit" class="btn btn-primary">Record</button>
         <!--display message which stated that admin has successfully recorded new vaccine batch
             declared in recordVc.php-->
-        
         <?php
             if(isset($_GET['message'])){ 
                 $message = $_GET['message'];
