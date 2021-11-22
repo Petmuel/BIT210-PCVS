@@ -1,4 +1,7 @@
-
+<?php
+    include_once 'actions/db.php';
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -31,8 +34,18 @@
         <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
         PCVS
       </a>
-       <!--admin's healthcare centre name is shown -->
-       <span id="callCentreName"></span>
+       <!--Current admin's centre is shown after logging in-->
+       <text>
+        <?php
+          $uName = $_SESSION['user_name'];
+          $sql = "SELECT * FROM tb_admins WHERE username = '$uName';";
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+          $centre = $row['centre'];
+          echo "Healthcare Centre: ".$centre;
+              
+        ?>         
+      </text>
       <!--
           To toggle the navigation bar
           data-toggle: class that will be applying toggle to 
@@ -93,62 +106,75 @@
     </div>
   </div>
 
-  <!--list of available vaccines-->
-  <div class="py-5 px-3 text-center">
-    <!--shadow behind div with rounded corners-->
-    <div class="container listvacBatchBg shadow-lg py-3 px-4 rounded-3">
-      <h3>List of Available Vaccine Batches</h3>
-      <div class="row horizontalOverflow shadow-lg">
-        <table>
-          <tr class="bg-white border-1">
-            <th class="p-3">Select</th>
-            <th class="p-3">BatchNo</th>
-            <th class="p-3">VaccineName</th>
-            <th class="p-3">Pending Appointments</th>
-            <th class="p-3">Expiry Date</th>  
-            <th class="p-3">Quantity Available</th>   
-            <th class="p-3">Quantity Pending</th>
-            <th class="p-3">Quantity Administered</th>
-          </tr>
-          
-          <tr class="bg-white border-1" id="tr">
-            <td><a href="vaccinationList.php" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
-            <td class="p-3">BatchNo01</td>
-            <td class="p-3">Pfizer</td>
-            <td class="p-3">3</td>
-            <td class="p-3">18/10/2021</td>
-            <td class="p-3">20</td>
-            <td class="p-3">3</td>
-            <td class="p-3">0</td>
-          </tr>
+  <!--View vaccine batch information-->
+  <form action="actions/viewVaccination.php" method="GET">
+      <!--list of available vaccines-->
+      <div class="py-5 px-3 text-center">
+          <!--shadow behind div with rounded corners-->
+          <div class="container listvacBatchBg shadow-lg py-3 px-4 rounded-3">
+          <h3>List of Available Vaccine Batches</h3>
+          <p>Select a Vaccine Batch To View Its Vaccination</p>
+              <div class="row horizontalOverflow">
+                  <table>
+                      <tr class="bg-white border-1">
+                          <th class="p-3">BatchNo</th>
+                          <th class="p-3">VaccineName</th>
+                          <th class="p-3">Expiry Date</th> 
+                          <th class="p-3">Quantity Available</th>   
+                          <th class="p-3">Quantity Administered</th>
+                          <th class="p-3">Pending Appointments</th>
+                      </tr>
+                      <?php
+                          $sql = "SELECT * FROM tb_batches WHERE centre = '$centre';";
+                          $result = mysqli_query($conn, $sql);
+                          
+                          //if there are rows retrieved from database
+                          if(mysqli_num_rows($result)>0){     
+                              //while there is still have a row of batches retrieved from database
+                              while($row = mysqli_fetch_assoc($result)){
+                      ?>
+                      <!--display list of batches which are retrieved from database-->
+                      <tr class="bg-white border-1">
+                          <!--display message stated that there are no vaccine batch in the list-->
+                          <p id="message"></p>
+                          <!--to store batchNo in value of input radio type-->
+                          <td class="px-3">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="bNo" value="<?php echo $row["batchNo"];?>" required>
+                                  <label class="form-check-label" for="bNo">
+                                      <!--display batchNo-->
+                                      <?php echo $row["batchNo"];?>
+                                  </label>
+                              </div>
+                          </td>   
+                          
+                          <td class="p-3"><?php echo $row["vaccineName"];?></td>
+                          <td class="p-3"><?php echo $row["expiryDate"];?></td>
+                          <td class="p-3"><?php echo $row["quantityAvailable"];?></td>
+                          <td class="p-3"><?php echo $row["quantityAdministered"];?></td>
+                          <td class="p-3"><?php echo $row["numberOfPendingAppointments"];?></td>
+                      </tr>
+                      <?php
+                              } //end of while loop
+                          } 
+                          //if there's no vaccine batches recorded by current admin
+                          else{
+                      ?>
+                      
+                      <th colspan="6" class="bg-white border-1 py-5">
+                          There are no recorded vaccine batches, please record a new one
+                      </th>
 
-          <tr class="bg-white border-1">
-            <td><a href="vaccinationList.php" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
-            <td class="p-3">BatchNo02</td>
-            <td class="p-3">Moderna</td>
-            <td class="p-3">10</td>
-            <td class="p-3">20/10/2021</td>
-            <td class="p-3">40</td>
-            <td class="p-3">10</td>
-            <td class="p-3">0</td>
-          </tr>
-
-          <tr class="bg-white border-1">
-            <td><a href="vaccinationList.php" class="list-group-item list-group-item-action active" aria-current="true">View Vaccination</a></td>
-            <td class="p-3">BatchNo03</td>
-            <td class="p-3">Astrazenaca</td>
-            <td class="p-3">2</td>
-            <td class="p-3">30/10/2021</td>
-            <td class="p-3">60</td>
-            <td class="p-3">2</td>
-            <td class="p-3">0</td>
-          </tr>
-
-        </table>
+                      <?php
+                          }
+                      ?>
+                  </table>
+              </div>
+              <br>
+              <button type="submit" name="submit" class="btn btn-primary">View Vaccination</button>
+          </div>
       </div>
-    </div>
-  </div>
-
+  </form>
 
  <!-- ======= Footer ======= -->
  <footer id="footer" class="section-bg">

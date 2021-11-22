@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include_once 'actions/db.php';
   $id = 0;
   
@@ -24,62 +25,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
-
-    <script>
-
-    //Generate VaccinationID
-
-    
-    (function() {
-        function IDGenerator() {
-        
-            this.length = 8;
-            this.timestamp = +new Date;
-            
-            var _getRandomInt = function( min, max ) {
-               return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
-            }
-            
-            this.generate = function() {
-                var ts = this.timestamp.toString();
-                var parts = ts.split( "" ).reverse();
-                var id = "";
-                
-                for( var i = 0; i < this.length; ++i ) {
-                   var index = _getRandomInt( 0, parts.length - 1 );
-                   id += parts[index];	 
-                }
-                
-                return id;
-            }
-   
-            
-        }
-        
-        
-        document.addEventListener( "DOMContentLoaded", function() {
-           var btn = document.querySelector( "#generate" ),
-               output = document.querySelector( "#output" );
-               
-           btn.addEventListener( "click", function() {
-               var generator = new IDGenerator();
-               output.innerHTML = generator.generate();
-               
-           }, false); 
-            
-        });
-        
-        
-    })();
-   
-   
-
-
-
-</script>
-
-
-    
     
     <title>Vaccines Batch</title>
 
@@ -149,7 +94,7 @@
     <br><br>
     <br><br>
 
-
+    <form action="actions/reqAppoint.php" method="GET">
     <section class="ftco-section" id="body">
         <div class="container1">
           <div style="overflow-x:auto;">
@@ -174,49 +119,53 @@
                     </tr>
                   </thead>
                   
-                  <tbody>
-                    <tr>
-                      <th scope="row" class="scope" ><br>BatchNo1</th>
-                      <td><br>12/04/2022</td>
-                      <td><br>1,000,000</td>
+                  <?php
+                    if (isset($_GET['submit'])){
+                      $date = $_GET['date'];
+                      $_SESSION['date'] = $date;
+                      $centre= $_GET['Healthcare'];
+                      $sql = "SELECT * FROM tb_batches WHERE centre = '$centre' AND vaccineName = 'Pfizer';";
+                      $result = mysqli_query($conn, $sql);
                       
-                    
-                      <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
-                    </tr>
-
-
-                    <tr>
-                      <th scope="row" class="scope" ><br>BatchNo2</th>
-                      <td><br>01/02/2022</td>
-                      <td><br>1,000,000</td>
-                      
-
-
-                      <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
-                    </tr>
-
-
-
-                    <tr>
-                      <th scope="row" class="scope" ><br>BatchNo3</th>
-                      <td><br>01/12/2021</td>
-                      <td><br>1,000,000</td>
-                      
-
-                      <td><br><button onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
-                    </tr>
-
-
-                    
-                    <tr>
-                      <th scope="row" class="scope" ><br>BatchNo4</th>
-                      <td><br>10/03/2022</td>
-                      <td><br>1,000,000</td>
-                      
-                      <td><br><button id="generate" onclick="document.location='VaccineStatus.php<?php echo $idText ?>'">Appointment</button></td>
-                    </tr>
+                      //if there are rows retrieved from database
+                      if(mysqli_num_rows($result)>0){     
+                          //while there is still have a row of batches retrieved from database
+                          while($row = mysqli_fetch_assoc($result)){
+                  ?>
+                  <!--display list of batches which are retrieved from database-->
+                  <tr class="bg-white border-1">
+                      <!--display message stated that there are no vaccine batch in the list-->
+                      <p id="message"></p>
+                      <!--to store batchNo in value of input radio type-->
+                      <td class="px-3">
+                          <div class="form-check">
+                              <input class="form-check-input" type="radio" name="bNo" value="<?php echo $row["batchNo"];?>" required>
+                              <label class="form-check-label" for="bNo">
+                                  <!--display batchNo-->
+                                  <?php echo $row["batchNo"];?>
+                              </label>
+                          </div>
+                      </td>   
+                      <td class="p-3"><?php echo $row["expiryDate"];?></td>
+                      <td class="p-3"><?php echo $row["quantityAvailable"];?></td>
+                      <td><button type="submit" name="submit" class="btn btn-primary">Request appointment</button></td>
+                  </tr>
+                  <?php
+                          } //end of while loop
+                      } 
+                      //if there's no vaccine batches recorded by current admin
+                      else{
+                  ?>
                   
-                  </tbody>
+                  <th colspan="6" class="bg-white border-1 py-5">
+                      There are no recorded vaccine batches, please record a new one
+                  </th>
+
+                  <?php
+                      }
+                    }
+                  ?>
+                  
                 </table>
               </div>
             </div>
@@ -224,6 +173,7 @@
           </div>
         </div>
       </section>
+      </form>
       <br><br>
 
       <hr>

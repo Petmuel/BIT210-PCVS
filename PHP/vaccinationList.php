@@ -18,33 +18,9 @@
   <link rel="stylesheet" href="../style.css">
 
   <style>
-
-
-
-    #bckgrnd{
+    .bckgrnd{
       background-color: rgb(245, 241, 255);
     }
-
-    #tbl{
-      background-color: rgb(237, 226, 247);
-    }
-
-
-    #btn{
-      color: black;
-      height: 50px;
-      width: auto; 
-      overflow: auto; 
-      border: inset black 0.1em;
-      background-color: rgb(208, 184, 236);
-      border: 1px solid #8e21f5;
-      
-    }
-
-
-    
-
-
   </style>
 
   <title>View Vaccination List</title>
@@ -65,8 +41,18 @@
         <img src="../img/vaccinationIcon.png" width="45" height="auto" alt="PCVSIcon">
         PCVS
       </a>
-      <!--admin's healthcare centre name is shown -->
-      <span id="callCentreName"></span>
+      <!--Current admin full name is shown after logging in-->
+      <text>
+        <?php
+          $uName = $_SESSION['user_name'];
+          $sql = "SELECT * FROM tb_admins WHERE username = '$uName';";
+          $result = mysqli_query($conn, $sql);
+
+          $row = mysqli_fetch_assoc($result);
+                echo "Healthcare Centre: ".$row["centre"];
+              
+        ?>         
+      </text>
       <!--
           To toggle the navigation bar
           data-toggle: class that will be applying toggle to 
@@ -112,66 +98,71 @@
 
     </div>
   </nav>
+  <br><br>
+  <!--View Vaccinations-->
+  <form action="confirm.php" method="GET">
+        <!--list of vaccinations-->
+        <div class="bckgrnd py-5 px-3 text-center">
+            <!--shadow behind div with rounded corners-->
+            <div style="background-color: rgb(237, 226, 247);" class="container listBg shadow-lg py-3 px-4 rounded-3">
+            <h3>List of Vaccinations</h3>
+            <p>Select a Vaccination To Confirm Its Appointment/Record That It Has Been Administered</p>
+                <div class="row horizontalOverflow">
+                    <table>
+                        <tr class="bg-white border-1">
+                            <th class="p-3">VaccinationID</th>
+                            <th class="p-3">Appointment Date</th>
+                            <th class="p-3">Status</th>
+                        </tr>
+                        <?php
+                            $batchNo= $_SESSION['batchNo'];
+                            $sql = "SELECT * FROM tb_vaccinations WHERE batchNo = '$batchNo';";
+                            $result = mysqli_query($conn, $sql);
+                            //if there are rows retrieved from database
+                            if(mysqli_num_rows($result)>0){
+                                //while there is still have a row of vaccinations retrieved from database
+                                while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                        <!--display list of vaccinations which are retrieved from database-->
+                        <tr class="bg-white border-1">
+                            <!--display message stated that there are no vaccinations in the list-->
+                            <p id="message"></p>
+                            <!--to store vaccinationID in value of input radio type-->
+                            <td class="px-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="vID" value="<?php echo $row["vaccinationID"];?>" required>
+                                    <label class="form-check-label" for="bNo">
+                                        <!--display vaccinationID-->
+                                        <?php echo $row["vaccinationID"];?>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="p-3"><?php echo $row["appointmentDate"];?></td>
+                            <td class="p-3"><?php echo $row["status"];?></td>
+                        </tr>
+                        <?php
+                                } //end of while loop
+                            }
+                            //if there's no vaccinations
+                            else{
+                        ?>
+                        <th colspan="5" class="bg-white border-1 py-5">
+                            There are no vaccinations
+                        </th>
+                        <?php
+                            }
+                        ?>
+                    </table>
+                </div>
+                <br>
+                <button type="submit" name="confirm" class="btn btn-primary">Confirm/Reject & Record that it's administered</button>
+            </div>
+        </div>
+    </form>
   
-  <!--list of vaccinations-->
-  <div  id="bckgrnd" class="py-5 px-3 mt-5 text-center  ">
-    <!--shadow behind div with rounded corners-->
-    <br><br>
-    <div id="tbl" class="container  shadow-lg py-3 px-4 rounded-3">
-      <h3>List of Vaccinations</h3>
-      <div  class="row horizontalOverflow shadow-lg">
-        <table class="center" >
-          <tr class="bg-white border-1">
-            <th class="p-3">Select</th>
-            <th class="p-3">VaccinationID</th>
-            <th class="p-3">Status</th>
-            <th class="p-3">Appointment Date</th>
-          </tr>
-          
-          <tr class="bg-white border-1">
-            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
-            <td class="p-3">Vaccination01</td>
-            <td class="p-3">Pending</td>
-            <td class="p-3">01/12/2021</td>
-          </tr>
-
-          <tr class="bg-white border-1">
-            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
-            <td class="p-3">Vaccination02</td>
-            <td class="p-3">Pending</td>
-            <td class="p-3">28/01/2022</td>
-          </tr>
-
-          <tr class="bg-white border-1">
-            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
-            <td class="p-3">Vaccination03</td>
-            <td class="p-3">Pending</td>
-            <td class="p-3">15/02/2022</td>
-          </tr>
-
-          <tr class="bg-white border-1">
-            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
-            <td class="p-3">Vaccination04</td>
-            <td class="p-3">Pending</td>
-            <td class="p-3">20/12/2021</td>
-          </tr>
-
-          <tr class="bg-white border-1">
-            <td><a href="confirm.php" id="btn" class="list-group-item list-group-item-action active" aria-current="true">View Full Info</a></td>
-            <td class="p-3">Vaccination05</td>
-            <td class="p-3">Pending</td>
-            <td class="p-3">11/11/2021</td>
-          </tr>
-          
-        </table>
-        
-      </div>
-    </div>
-  </div>
-  
 
 
- <!-- ======= Footer ======= -->
+ <!-- ======= Footer ======= --> 
  <footer id="footer" class="section-bg">
     <div class="footer-top">
       <div class="container">
