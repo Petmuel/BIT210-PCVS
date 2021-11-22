@@ -278,32 +278,21 @@ text-align: center;
 
 
 
-                    <td ><br><button type="submit" id="Confbutton" name="btnConfirm" onclick="return confirm('Are you sure to confirm? ')">Confirm</button></td>
-                    <td ><br><button type="submit" id="Rejbutton" name="btnReject" onclick="return confirm('Are you sure to reject?')">Reject</button></td> 
+  <td ><br><button type="submit" id="Confbutton" name="btnConfirm" onclick="return confirm('Are you sure to confirm? ')">Confirm</button></td>
+   <td ><br><button type="submit" id="Rejbutton" name="btnReject" onclick="return confirm('Are you sure to reject?')">Reject</button></td> 
                 </select></td>
                      
                   </tbody>
-
-                  
-                  
                 </table>
 
                 <br><br><br>
+  <p id="AdButton"><b>Confirm the Vaccination that has been administered:  </b> <br><br>
 
-
-
-      <p id="AdButton"><b>Confirm the Vaccination that has been administered:  </b> <br><br>
-
-                    
-      <button id="Adminbutton" onclick="showMessageAdmin()">Select to Confirm</button>
+ <button id="Adminbutton" onclick="showMessageAdmin()">Select to Confirm</button>
 
     </p>
-
-
       <br><br><br>
-
-
-                
+        
               </div>
 
               
